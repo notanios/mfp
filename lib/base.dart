@@ -16,6 +16,7 @@ class _BasePageState extends State<BasePage> {
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       appBar: widget.appBar ?? PreferredSize(child: Container(), preferredSize: const Size(0, 0)),
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Expanded(
