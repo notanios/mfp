@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mdf_volunteers/base.dart';
 import 'package:mdf_volunteers/presentation/components/secondary_button.dart';
-import 'package:mdf_volunteers/presentation/components/simple_app_bar.dart';
 import 'package:mdf_volunteers/presentation/profile/profile_controller.dart';
 import 'package:mdf_volunteers/presentation/profile_form/profile_form.dart';
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
@@ -21,7 +20,7 @@ class ProfileScreen extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return BasePage(builder: (context) {
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0),
           child: Column(
