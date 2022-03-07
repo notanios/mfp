@@ -6,11 +6,6 @@ import 'package:mdf/presentation/profile/profile_controller.dart';
 class ProfileBinding extends Bindings {
   @override
   void dependencies() {
-    @override
-    void dependencies() {
-      //Get.lazyPut(() => ProfileController(userRepository: Get.find<UserRepository>()));
-      //Get.lazyPut(() => InternetConnectionController());
-    }
+      Get.lazyPut(() => ProfileController(Get.find<UserRepository>()));
   }
-
 }

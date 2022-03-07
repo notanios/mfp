@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mdf/data/models/failure/failure.dart';
 import 'package:mdf/data/repos/user_repository_impl.dart';
 
 class LoginController extends GetxController with StateMixin<String> {
@@ -8,6 +9,7 @@ class LoginController extends GetxController with StateMixin<String> {
   LoginController({required this.userRepository});
   var isNumberValid = false.obs;
   var isLoading = false.obs;
+  var error = "".obs;
 
   TextEditingController inputController = TextEditingController();
 
@@ -26,8 +28,12 @@ class LoginController extends GetxController with StateMixin<String> {
     var response = await userRepository.login(phoneNumber);
     response.fold((l) {
       isLoading.value = false;
+      if(l is ServerFailure){
+         error.value = l.errorObject.toString();
+      }
     }, (r) {
       isLoading.value = false;
+      error.value = "";
     });
   }
 

@@ -6,9 +6,9 @@ import 'package:mdf/presentation/styles/text_styles.dart';
 import 'notification_button.dart';
 
 class NotificationCard extends StatelessWidget {
-  Notifications notifications;
+  HelpNotification notification;
 
-  NotificationCard({Key? key, required this.notifications}) : super(key: key);
+  NotificationCard({Key? key, required this.notification}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class NotificationCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    notifications.type ?? "",
+                    notification.type ?? "",
                     style: TextStyles.bold
                         .copyWith(color: AppColors.black, fontSize: 18),
                   ),
@@ -38,7 +38,7 @@ class NotificationCard extends StatelessWidget {
                         ),
                         borderRadius: BorderRadius.circular(8)),
                     child: Text(
-                      "Status: ${notifications.status?.toUpperCase() ?? ""}",
+                      "Status: ${notification.status?.toUpperCase() ?? ""}",
                       style: TextStyles.regular
                           .copyWith(color: AppColors.tuna, fontSize: 14),
                     ),
@@ -49,7 +49,7 @@ class NotificationCard extends StatelessWidget {
                 height: 8,
               ),
               Text(
-                notifications.descriptions ?? "",
+                notification.descriptions ?? "",
                 style: TextStyles.regular
                     .copyWith(color: AppColors.black, fontSize: 14),
               ),

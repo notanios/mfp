@@ -16,4 +16,16 @@ abstract class UserApiService {
 
   @POST("/token")
   Future sendFirebaseToken(@Body() String token);
+
+  @GET("/notifications")
+  Future<List<HelpNotification>> getNotifications();
+
+  @POST("/confirm-code")
+  Future confirmCode(@Body() String code);
+
+  @POST("/profile")
+  Future updateProfile();
+
+  @POST("/logout")
+  Future logout();
 }

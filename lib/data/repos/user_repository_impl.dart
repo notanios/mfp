@@ -1,8 +1,10 @@
 import 'dart:ffi';
+import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:mdf/data/api/distrincts_data_source.dart';
+import 'package:mdf/data/api/errors/error_interceptor.dart';
 import 'package:mdf/data/models/index.dart';
 
 import '../api/user_api_data_source.dart';
@@ -13,6 +15,13 @@ abstract class UserRepository {
   Future<Either<Failure, List<Distrinct>>> getDistricts();
 
   Future<Either<Failure, dynamic>> sendFirebaseToken(String token);
+  Future<Either<Failure, List<HelpNotification>>> getNotifications();
+
+  Future<Either<Failure, dynamic>> confirmCode(String code);
+
+  Future<Either<Failure, dynamic>> updateProfile();
+
+  Future<Either<Failure, dynamic>> logout();
 }
 
 class UserRepositoryImpl extends UserRepository {
@@ -54,4 +63,43 @@ class UserRepositoryImpl extends UserRepository {
       }
   }
 
+  @override
+  Future<Either<Failure, List<HelpNotification>>> getNotifications() async {
+     try{
+       final response = await userApiDataSource.getNotifications();
+       return Right(response);
+     } catch (e) {
+       return Left(ServerFailure(errorObject: e));
+     }
+  }
+
+  @override
+  Future<Either<Failure, dynamic>> confirmCode(String code) async {
+    try {
+      final response = await userApiDataSource.confirmCode(code);
+      return Right(response);
+    } catch (e){
+      return Left(ServerFailure(errorObject: e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, dynamic>> updateProfile() async {
+    try{
+      var result = await userApiDataSource.updateProfile();
+      return Right(result);
+    }catch(e){
+      return Left(ServerFailure(errorObject: e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, dynamic>> logout() async {
+    try{
+      var result = await userApiDataSource.logout();
+      return Right(result);
+    }catch(e){
+      return Left(ServerFailure(errorObject: e));
+    }
+  }
 }

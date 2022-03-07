@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:mdf/base.dart';
+import 'package:mdf/presentation/components/no_overscroll_behavior.dart';
 import 'package:mdf/presentation/components/simple_app_bar.dart';
 import 'package:mdf/presentation/notifications/components/NotificationCard.dart';
 import 'package:mdf/presentation/notifications/notifications_controller.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
-import 'package:mdf/presentation/styles/strings.dart';
-import 'package:mdf/presentation/styles/text_styles.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../routes/app_pages.dart';
+import '../base/base.dart';
+import '../base/snack_bar_widget.dart';
+import '../styles/text_styles.dart';
 import 'components/availability_switch.dart';
 
 class NotificationsScreen extends GetView<NotificationsController> {
@@ -72,51 +74,67 @@ class NotificationsScreen extends GetView<NotificationsController> {
           ),
         ),
         builder: (context) {
-          return Container(
-            color: AppColors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                  color: AppColors.black.withAlpha(7),
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 15),
-                  child: AvailabilitySwitch(),
-                ),
-                Container(
-                  height: 0.3,
-                  width: double.infinity,
-                  color: AppColors.dividerColor,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Expanded(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: CustomScrollView(
-                    slivers: [
-                      SliverToBoxAdapter(
-                        child: Text(
-                          Strings.solicitari,
-                          style: TextStyles.regular.copyWith(fontSize: 20),
-                        ),
-                      ),
-                      SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          final item = controller.notifications[index];
+          return Stack(
+            children: [
+              Container(
+                color: AppColors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      color: AppColors.black.withAlpha(7),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 15),
+                      child: AvailabilitySwitch(),
+                    ),
+                    Container(
+                      height: 0.3,
+                      width: double.infinity,
+                      color: AppColors.dividerColor,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Obx(() => SmartRefresher(
+                            enablePullDown: true,
+                            enablePullUp: false,
+                            controller: controller.refreshController,
+                            onRefresh: () {
+                              controller.getNotifications(false);
+                            },
+                            child: CustomScrollView(
+                              scrollBehavior: NoOverscrollBehaviour(),
+                              slivers: [
+                                SliverList(
+                                  delegate: SliverChildBuilderDelegate(
+                                      (BuildContext context, int index) {
+                                    final item =
+                                        controller.notifications.value[index];
 
-                          return NotificationCard(notifications: item);
-                        }, childCount: controller.notifications.length),
-                      )
-                    ],
-                  ),
-                ))
-              ],
-            ),
+                                    return NotificationCard(notification: item);
+                                  },
+                                      childCount: controller
+                                          .notifications.value.length),
+                                )
+                              ],
+                            ),
+                          )),
+                    ))
+                  ],
+                ),
+              ),
+              Obx(() => controller.isLoading.value
+                  ? const Center(child: CircularProgressIndicator())
+                  : Container()),
+              Obx(() => controller.error.value.isNotEmpty
+                  ? SnackBarWidget(controller.error.value)
+                  : Container())
+            ],
           );
         });
   }

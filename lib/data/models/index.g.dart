@@ -41,15 +41,15 @@ Map<String, dynamic> _$$_DistrinctToJson(_$_Distrinct instance) =>
       'name': instance.name,
     };
 
-_$_Notifications _$$_NotificationsFromJson(Map<String, dynamic> json) =>
-    _$_Notifications(
+_$_HelpNotification _$$_HelpNotificationFromJson(Map<String, dynamic> json) =>
+    _$_HelpNotification(
       id: json['id'] as int? ?? 0,
       type: json['type'] as String?,
       descriptions: json['description'] as String?,
       status: json['status'] as String?,
     );
 
-Map<String, dynamic> _$$_NotificationsToJson(_$_Notifications instance) =>
+Map<String, dynamic> _$$_HelpNotificationToJson(_$_HelpNotification instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': instance.type,

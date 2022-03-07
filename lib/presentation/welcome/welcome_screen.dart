@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:mdf/base.dart';
 import 'package:mdf/presentation/notifications/components/logo.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
 
 import '../../routes/app_pages.dart';
+import '../base/base.dart';
 import '../components/primary_button.dart';
 import '../styles/strings.dart';
 import '../styles/text_styles.dart';
@@ -40,7 +40,7 @@ class WelcomeScreen extends GetView {
               ),
             ),
             PrimaryButton(
-              () => {Get.toNamed(Routes.NOTIFICATIONS)},
+              () => {Get.toNamed(Routes.PROFILE)},
               title: Strings.register,
             ),
             Logo(),

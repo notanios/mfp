@@ -22,12 +22,12 @@ class PushNotificationsController {
     FirebaseMessaging.instance.getToken().then((token) async {
       print("FirebaseMessaging getToken $token ");
       if (token != null && token.isNotEmpty) {
-        await repo.sendFirebaseToken(token);
+       // await repo.sendFirebaseToken(token);
       }
     });
     FirebaseMessaging.instance.onTokenRefresh.listen((token) async {
       if (token.isNotEmpty) {
-         await repo.sendFirebaseToken(token);
+        // await repo.sendFirebaseToken(token);
       }
     });
 

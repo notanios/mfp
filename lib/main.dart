@@ -7,14 +7,10 @@ import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/push_notifications_controller.dart';
 import 'package:mdf/routes/app_pages.dart';
 
-import 'di/injection_container.dart';
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) async {
-    await initDi();
     runApp(const MyApp());
   });
 }

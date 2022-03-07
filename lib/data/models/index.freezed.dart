@@ -492,20 +492,20 @@ abstract class _Distrinct implements Distrinct {
       throw _privateConstructorUsedError;
 }
 
-Notifications _$NotificationsFromJson(Map<String, dynamic> json) {
-  return _Notifications.fromJson(json);
+HelpNotification _$HelpNotificationFromJson(Map<String, dynamic> json) {
+  return _HelpNotification.fromJson(json);
 }
 
 /// @nodoc
-class _$NotificationsTearOff {
-  const _$NotificationsTearOff();
+class _$HelpNotificationTearOff {
+  const _$HelpNotificationTearOff();
 
-  _Notifications call(
+  _HelpNotification call(
       {@JsonKey(name: 'id') int id = 0,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
       @JsonKey(name: 'status') String? status}) {
-    return _Notifications(
+    return _HelpNotification(
       id: id,
       type: type,
       descriptions: descriptions,
@@ -513,16 +513,16 @@ class _$NotificationsTearOff {
     );
   }
 
-  Notifications fromJson(Map<String, Object?> json) {
-    return Notifications.fromJson(json);
+  HelpNotification fromJson(Map<String, Object?> json) {
+    return HelpNotification.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Notifications = _$NotificationsTearOff();
+const $HelpNotification = _$HelpNotificationTearOff();
 
 /// @nodoc
-mixin _$Notifications {
+mixin _$HelpNotification {
   @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'type')
@@ -534,15 +534,15 @@ mixin _$Notifications {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NotificationsCopyWith<Notifications> get copyWith =>
+  $HelpNotificationCopyWith<HelpNotification> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NotificationsCopyWith<$Res> {
-  factory $NotificationsCopyWith(
-          Notifications value, $Res Function(Notifications) then) =
-      _$NotificationsCopyWithImpl<$Res>;
+abstract class $HelpNotificationCopyWith<$Res> {
+  factory $HelpNotificationCopyWith(
+          HelpNotification value, $Res Function(HelpNotification) then) =
+      _$HelpNotificationCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'type') String? type,
@@ -551,13 +551,13 @@ abstract class $NotificationsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NotificationsCopyWithImpl<$Res>
-    implements $NotificationsCopyWith<$Res> {
-  _$NotificationsCopyWithImpl(this._value, this._then);
+class _$HelpNotificationCopyWithImpl<$Res>
+    implements $HelpNotificationCopyWith<$Res> {
+  _$HelpNotificationCopyWithImpl(this._value, this._then);
 
-  final Notifications _value;
+  final HelpNotification _value;
   // ignore: unused_field
-  final $Res Function(Notifications) _then;
+  final $Res Function(HelpNotification) _then;
 
   @override
   $Res call({
@@ -588,11 +588,11 @@ class _$NotificationsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$NotificationsCopyWith<$Res>
-    implements $NotificationsCopyWith<$Res> {
-  factory _$NotificationsCopyWith(
-          _Notifications value, $Res Function(_Notifications) then) =
-      __$NotificationsCopyWithImpl<$Res>;
+abstract class _$HelpNotificationCopyWith<$Res>
+    implements $HelpNotificationCopyWith<$Res> {
+  factory _$HelpNotificationCopyWith(
+          _HelpNotification value, $Res Function(_HelpNotification) then) =
+      __$HelpNotificationCopyWithImpl<$Res>;
   @override
   $Res call(
       {@JsonKey(name: 'id') int id,
@@ -602,15 +602,15 @@ abstract class _$NotificationsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$NotificationsCopyWithImpl<$Res>
-    extends _$NotificationsCopyWithImpl<$Res>
-    implements _$NotificationsCopyWith<$Res> {
-  __$NotificationsCopyWithImpl(
-      _Notifications _value, $Res Function(_Notifications) _then)
-      : super(_value, (v) => _then(v as _Notifications));
+class __$HelpNotificationCopyWithImpl<$Res>
+    extends _$HelpNotificationCopyWithImpl<$Res>
+    implements _$HelpNotificationCopyWith<$Res> {
+  __$HelpNotificationCopyWithImpl(
+      _HelpNotification _value, $Res Function(_HelpNotification) _then)
+      : super(_value, (v) => _then(v as _HelpNotification));
 
   @override
-  _Notifications get _value => super._value as _Notifications;
+  _HelpNotification get _value => super._value as _HelpNotification;
 
   @override
   $Res call({
@@ -619,7 +619,7 @@ class __$NotificationsCopyWithImpl<$Res>
     Object? descriptions = freezed,
     Object? status = freezed,
   }) {
-    return _then(_Notifications(
+    return _then(_HelpNotification(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -642,15 +642,15 @@ class __$NotificationsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Notifications implements _Notifications {
-  _$_Notifications(
+class _$_HelpNotification implements _HelpNotification {
+  _$_HelpNotification(
       {@JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'type') this.type,
       @JsonKey(name: 'description') this.descriptions,
       @JsonKey(name: 'status') this.status});
 
-  factory _$_Notifications.fromJson(Map<String, dynamic> json) =>
-      _$$_NotificationsFromJson(json);
+  factory _$_HelpNotification.fromJson(Map<String, dynamic> json) =>
+      _$$_HelpNotificationFromJson(json);
 
   @override
   @JsonKey(name: 'id')
@@ -667,14 +667,14 @@ class _$_Notifications implements _Notifications {
 
   @override
   String toString() {
-    return 'Notifications(id: $id, type: $type, descriptions: $descriptions, status: $status)';
+    return 'HelpNotification(id: $id, type: $type, descriptions: $descriptions, status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Notifications &&
+            other is _HelpNotification &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality()
@@ -692,24 +692,24 @@ class _$_Notifications implements _Notifications {
 
   @JsonKey(ignore: true)
   @override
-  _$NotificationsCopyWith<_Notifications> get copyWith =>
-      __$NotificationsCopyWithImpl<_Notifications>(this, _$identity);
+  _$HelpNotificationCopyWith<_HelpNotification> get copyWith =>
+      __$HelpNotificationCopyWithImpl<_HelpNotification>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NotificationsToJson(this);
+    return _$$_HelpNotificationToJson(this);
   }
 }
 
-abstract class _Notifications implements Notifications {
-  factory _Notifications(
+abstract class _HelpNotification implements HelpNotification {
+  factory _HelpNotification(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
-      @JsonKey(name: 'status') String? status}) = _$_Notifications;
+      @JsonKey(name: 'status') String? status}) = _$_HelpNotification;
 
-  factory _Notifications.fromJson(Map<String, dynamic> json) =
-      _$_Notifications.fromJson;
+  factory _HelpNotification.fromJson(Map<String, dynamic> json) =
+      _$_HelpNotification.fromJson;
 
   @override
   @JsonKey(name: 'id')
@@ -725,6 +725,6 @@ abstract class _Notifications implements Notifications {
   String? get status;
   @override
   @JsonKey(ignore: true)
-  _$NotificationsCopyWith<_Notifications> get copyWith =>
+  _$HelpNotificationCopyWith<_HelpNotification> get copyWith =>
       throw _privateConstructorUsedError;
 }

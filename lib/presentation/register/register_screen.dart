@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:mdf/base.dart';
 import 'package:mdf/presentation/profile_form/profile_form.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/presentation/styles/text_styles.dart';
 
+import '../base/base.dart';
 import '../components/simple_app_bar.dart';
 import '../styles/strings.dart';
 

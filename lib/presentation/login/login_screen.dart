@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
-import 'package:mdf/base.dart';
 import 'package:mdf/presentation/components/simple_app_bar.dart';
 import 'package:mdf/presentation/login/login_controller.dart';
 import 'package:mdf/presentation/notifications/components/logo.dart';
@@ -11,6 +10,8 @@ import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/presentation/styles/strings.dart';
 import 'package:mdf/routes/app_pages.dart';
 
+import '../base/base.dart';
+import '../base/snack_bar_widget.dart';
 import '../components/input_field.dart';
 import '../components/primary_button.dart';
 import '../styles/text_styles.dart';
@@ -112,6 +113,9 @@ class LoginScreen extends GetView<LoginController> {
               Obx(() => controller.isLoading.value
                   ? const Center(child: CircularProgressIndicator())
                   : Container()),
+              Obx(() => controller.error.value.isNotEmpty
+                  ? SnackBarWidget(controller.error.value)
+                  : Container())
             ]),
           );
         });
