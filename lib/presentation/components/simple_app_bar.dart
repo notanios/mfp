@@ -8,6 +8,7 @@ class SimpleAppBar extends AppBar {
   final bool showBack;
   final BuildContext context;
   final Widget? rightWidget;
+  final Widget? leftWidget;
   final Color? colorBackGround;
   final Color? colorBackIcon;
   final PreferredSize? bottomWidget;
@@ -17,8 +18,9 @@ class SimpleAppBar extends AppBar {
     this.context, {
     Key? key,
     this.titleKey,
-    this.showBack = false,
+    this.showBack = true,
     this.rightWidget,
+    this.leftWidget,
     this.colorBackGround,
     this.colorBackIcon,
     this.bottomWidget,
@@ -38,16 +40,23 @@ class SimpleAppBar extends AppBar {
           children: [
             Row(
               children: [
-                backWidget(context, colorIcon: colorBackIcon, onBackTap: onBackTap),
+                leftWidget != null
+                    ? leftWidget!
+                    : showBack
+                        ? backWidget(context,
+                            colorIcon: colorBackIcon, onBackTap: onBackTap)
+                        : Container()
               ],
             ),
             Container(
-                child: Text(titleKey != null ? titleKey! : "", style: TextStyles.medium.copyWith(color: AppColors.black, fontSize: 19),)),
+                child: Text(
+                  titleKey != null ? titleKey! : "",
+                  style: TextStyles.medium
+                      .copyWith(color: AppColors.black, fontSize: 19),
+                )),
             rightWidget != null
                 ? rightWidget!
-                : Container(
-                    width: 48,
-                  ),
+                : Container(width: showBack ? 48 : 0),
           ],
         ),
       );

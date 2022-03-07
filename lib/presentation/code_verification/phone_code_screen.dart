@@ -29,13 +29,13 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const SizedBox(height: 80,),
+            const SizedBox(height: 10,),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 35.0, left: 5, right: 5),
+                  padding: const EdgeInsets.only(bottom: 35.0),
                   child: Text(
                     Strings.introdu_codul,
                     style: TextStyles.medium.copyWith(color: AppColors.darkBlue, fontSize: 20),
@@ -43,7 +43,7 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 120, left: 10, right: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10),
                   child: PinCodeTextField(
                     length: 6,
                     pinTheme: const PinTheme.defaults(
@@ -64,6 +64,7 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
                     },
                   ),
                 ),
+                SizedBox(height: 65)
               ],
             ),
             Logo()

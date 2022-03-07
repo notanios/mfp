@@ -27,105 +27,85 @@ class LoginScreen extends GetView<LoginController> {
             color: AppColors.white,
             child: Stack(children: [
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(child: LayoutBuilder(builder:
-                      (BuildContext context, BoxConstraints viewportConstraints) {
-                    return SingleChildScrollView(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(
-                          minHeight: viewportConstraints.maxHeight,
+                  const SizedBox(height: 10),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                   child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 35.0),
+                          child: Text(
+                            Strings.insert_number,
+                            style: TextStyles.medium.copyWith(color: AppColors.darkBlue, fontSize: 20),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                        child: IntrinsicHeight(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 30.0),
-                              child: Column(
-                                children: [
-                                  Expanded(
-                                      child: Padding(
-                                        padding:
-                                        const EdgeInsets.symmetric(horizontal: 20.0),
-                                        child: Container(
-                                          child: Column(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.only(bottom: 35.0),
-                                                child: Text(
-                                                  Strings.insert_number,
-                                                  style: TextStyles.medium.copyWith(color: AppColors.darkBlue, fontSize: 20),
-                                                  textAlign: TextAlign.center,
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border.all(
-                                                      color: AppColors.primaryColor,
-                                                      width: 1,
-                                                    )),
-                                                child: Row(
-                                                  mainAxisSize: MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                                  children: [
-                                                    CountryCodePicker(
-                                                      onChanged: (code) {
-                                                        controller
-                                                            .selectedCountryCode(code);
-                                                      },
-                                                      textStyle:
-                                                      TextStyles.inputTextStyle,
-                                                      dialogSize: Size(
-                                                          screenSize.width - 20,
-                                                          screenSize.height - 300),
-                                                      // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
-                                                      initialSelection: 'MD',
-                                                      favorite: const ['+373', 'MD'],
-                                                      // optional. Shows only country name and flag
-                                                      showCountryOnly: false,
-                                                      // optional. Shows only country name and flag when popup is closed.
-                                                      showOnlyCountryWhenClosed: false,
-                                                      // optional. aligns the flag and the Text left
-                                                      alignLeft: false,
-                                                    ),
-                                                    Expanded(
-                                                      child: PrsntTextInput(
-                                                        controller:
-                                                        controller.inputController,
-                                                        hint: Strings.nr_telefon,
-                                                        hideBorders: true,
-                                                        keyboardType: TextInputType.phone,
-                                                      ),
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.symmetric(
-                                                    vertical: 15),
-                                                child: Obx(
-                                                      () => PrimaryButton(
-                                                        () => {
-                                                      Get.toNamed(Routes.PHONE_CODE)
-                                                      /*
-                                        controller.getUsers(
-                                            controller.inputController.text)*/
-                                                    },
-                                                    enabled:
-                                                    controller.isNumberValid.value,
-                                                    title: Strings.intra_in_cont,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ))
-                                ],
+                        Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.primaryColor,
+                                width: 1,
+                              )),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment:
+                            MainAxisAlignment.start,
+                            children: [
+                              CountryCodePicker(
+                                onChanged: (code) {
+                                  controller
+                                      .selectedCountryCode(code);
+                                },
+                                textStyle:
+                                TextStyles.inputTextStyle,
+                                dialogSize: Size(
+                                    screenSize.width - 20,
+                                    screenSize.height - 300),
+                                // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+                                initialSelection: 'MD',
+                                favorite: const ['+373', 'MD'],
+                                // optional. Shows only country name and flag
+                                showCountryOnly: false,
+                                // optional. Shows only country name and flag when popup is closed.
+                                showOnlyCountryWhenClosed: false,
+                                // optional. aligns the flag and the Text left
+                                alignLeft: false,
                               ),
-                            )),
-                      ),
-                    );
-                  })),
+                              Expanded(
+                                child: PrsntTextInput(
+                                  controller:
+                                  controller.inputController,
+                                  hint: Strings.nr_telefon,
+                                  hideBorders: true,
+                                  keyboardType: TextInputType.phone,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 15),
+                          child: Obx(
+                                () => PrimaryButton(
+                                  () => {
+                                Get.toNamed(Routes.PHONE_CODE)
+                                /*
+                                          controller.getUsers(
+                                              controller.inputController.text)*/
+                              },
+                              enabled:
+                              controller.isNumberValid.value,
+                              title: Strings.intra_in_cont,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                 ),
                   Logo()
                 ],
               ),

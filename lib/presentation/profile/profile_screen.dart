@@ -78,7 +78,7 @@ class ProfileScreen extends GetView<ProfileController> {
                         padding: const EdgeInsets.only(top: 15.0),
                         child: Column(
                           children: [
-                            ProfileForm(),
+                            ProfileForm(false),
                             const SizedBox(height: 20,),
                             SecondaryButton( (){
                             }, title: Strings.iesi_din_cont)

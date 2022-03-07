@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:mdf_volunteers/base.dart';
 import 'package:mdf_volunteers/presentation/profile_form/profile_form.dart';
+import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
 import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
 
 import '../components/simple_app_bar.dart';
@@ -19,8 +20,10 @@ class RegisterScreen extends GetView {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+        appBar: SimpleAppBar(context, titleKey: Strings.register_header),
         builder: (context) {
           return Container(
+            color: AppColors.white,
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
@@ -42,7 +45,7 @@ class RegisterScreen extends GetView {
                         child: IntrinsicHeight(
                             child: Padding(
                           padding: const EdgeInsets.only(top: 30.0),
-                          child: ProfileForm(),
+                          child: ProfileForm(true),
                         )),
                       ),
                     );

@@ -27,6 +27,11 @@ class Strings {
  static const String register = "Înregistrează-te";
  static const String insert_number = "Introdu numărul tău de telefon pentru a te putea identifica în sistem";
  static const String register_header = "Înregistrare";
+ static const String continue_label = "Continuă";
+ static const String save = "Salvează";
+ static const String status = "Status: ";
+ static const String available = "Disponibil";
+ static const String unavailable = "Indisponibil";
 
 //static const String telefon = "Telefon";
 }

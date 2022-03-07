@@ -16,6 +16,8 @@ class ProfileForm extends GetView<ProfileFormController> {
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _locationFocusNode = FocusNode();
 
+  bool isFromRegister;
+  ProfileForm(this.isFromRegister, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return scrollBody(context);
@@ -155,7 +157,7 @@ class ProfileForm extends GetView<ProfileFormController> {
           padding: const EdgeInsets.symmetric(vertical: 15),
           child: Obx(() => PrimaryButton(
                 () => {Get.toNamed(Routes.NOTIFICATIONS)},
-                title: Strings.intra_in_cont,
+                title: isFromRegister ? Strings.continue_label : Strings.save,
                 enabled: controller.isFormValid.value,
               )),
         )
