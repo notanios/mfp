@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/styles/strings.dart';
-import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/strings.dart';
+import 'package:mdf/presentation/styles/text_styles.dart';
 
 class AvailabilitySwitch extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:country_code_picker/country_code.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/data/repos/user_repository_impl.dart';
+import 'package:mdf/data/repos/user_repository_impl.dart';
 
 class LoginController extends GetxController with StateMixin<String> {
   final UserRepository userRepository;
@@ -11,7 +11,7 @@ class LoginController extends GetxController with StateMixin<String> {
 
   TextEditingController inputController = TextEditingController();
 
-  CountryCode? _selectedCountryCode = null;
+  CountryCode? _selectedCountryCode;
 
   @override
   void onInit() {

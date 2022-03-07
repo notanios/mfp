@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/base.dart';
-import 'package:mdf_volunteers/presentation/notifications/components/logo.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
+import 'package:mdf/base.dart';
+import 'package:mdf/presentation/notifications/components/logo.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
 
 import '../../routes/app_pages.dart';
 import '../components/primary_button.dart';

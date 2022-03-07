@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:mdf_volunteers/data/models/index.dart';
+import 'package:mdf/data/models/index.dart';
 
 abstract class DistrictsDataSource {
   Future<List<Distrinct>> getDistricts();

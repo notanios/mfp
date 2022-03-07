@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/presentation/components/checkbox_comp.dart';
-import 'package:mdf_volunteers/presentation/components/checkbox_group.dart';
-import 'package:mdf_volunteers/presentation/components/input_field.dart';
-import 'package:mdf_volunteers/presentation/components/primary_button.dart';
-import 'package:mdf_volunteers/presentation/profile_form/profile_form_controller.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/styles/strings.dart';
-import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
-import 'package:mdf_volunteers/routes/app_pages.dart';
+import 'package:mdf/presentation/components/checkbox_comp.dart';
+import 'package:mdf/presentation/components/checkbox_group.dart';
+import 'package:mdf/presentation/components/input_field.dart';
+import 'package:mdf/presentation/components/primary_button.dart';
+import 'package:mdf/presentation/profile_form/profile_form_controller.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/strings.dart';
+import 'package:mdf/presentation/styles/text_styles.dart';
+import 'package:mdf/routes/app_pages.dart';
 
 class ProfileForm extends GetView<ProfileFormController> {
   final FocusNode _firstnameFocusNode = FocusNode();

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/data/models/index.dart';
+import 'package:mdf/data/models/index.dart';
 
 class NotificationsController extends GetxController {
   List<Notifications> notifications = [];

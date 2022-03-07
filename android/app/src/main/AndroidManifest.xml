@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mfp.mdf_volunteers">
+    package="com.mfp.mdf">
    <application
-        android:label="mdf_volunteers"
+        android:label="mdf"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

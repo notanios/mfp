@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/base.dart';
-import 'package:mdf_volunteers/presentation/components/simple_app_bar.dart';
-import 'package:mdf_volunteers/presentation/notifications/components/NotificationCard.dart';
-import 'package:mdf_volunteers/presentation/notifications/notifications_controller.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/styles/strings.dart';
-import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
+import 'package:mdf/base.dart';
+import 'package:mdf/presentation/components/simple_app_bar.dart';
+import 'package:mdf/presentation/notifications/components/NotificationCard.dart';
+import 'package:mdf/presentation/notifications/notifications_controller.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/strings.dart';
+import 'package:mdf/presentation/styles/text_styles.dart';
 
 import 'components/availability_switch.dart';
 

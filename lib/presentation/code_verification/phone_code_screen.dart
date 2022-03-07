@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:mdf_volunteers/base.dart';
-import 'package:mdf_volunteers/presentation/code_verification/phone_code_controller.dart';
-import 'package:mdf_volunteers/presentation/components/simple_app_bar.dart';
-import 'package:mdf_volunteers/presentation/notifications/components/logo.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/routes/app_pages.dart';
+import 'package:mdf/base.dart';
+import 'package:mdf/presentation/code_verification/phone_code_controller.dart';
+import 'package:mdf/presentation/components/simple_app_bar.dart';
+import 'package:mdf/presentation/notifications/components/logo.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/routes/app_pages.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../styles/strings.dart';

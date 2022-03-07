@@ -1,4 +1,4 @@
-name: mdf_volunteers
+name: mdf
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -49,6 +49,7 @@ dependencies:
   country_code_picker: ^2.0.2
   libphonenumber: ^2.0.2
   flutter_switch: ^0.3.2
+  firebase_core: ^1.12.0
 
 dev_dependencies:
   flutter_test:

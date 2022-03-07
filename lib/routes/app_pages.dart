@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/presentation/code_verification/phone_code_screen.dart';
-import 'package:mdf_volunteers/presentation/login/login_binding.dart';
-import 'package:mdf_volunteers/presentation/notifications/notifications_binding.dart';
-import 'package:mdf_volunteers/presentation/notifications/notifications_screen.dart';
-import 'package:mdf_volunteers/presentation/profile/profile_screen.dart';
-import 'package:mdf_volunteers/presentation/profile_form/profile_form_binding.dart';
-import 'package:mdf_volunteers/presentation/register/register_screen.dart';
-import 'package:mdf_volunteers/presentation/welcome/welcome_screen.dart';
+import 'package:mdf/presentation/code_verification/phone_code_screen.dart';
+import 'package:mdf/presentation/login/login_binding.dart';
+import 'package:mdf/presentation/notifications/notifications_binding.dart';
+import 'package:mdf/presentation/notifications/notifications_screen.dart';
+import 'package:mdf/presentation/profile/profile_screen.dart';
+import 'package:mdf/presentation/profile_form/profile_form_binding.dart';
+import 'package:mdf/presentation/register/register_screen.dart';
+import 'package:mdf/presentation/welcome/welcome_screen.dart';
 
 import '../presentation/login/login_screen.dart';
 

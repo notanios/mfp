@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mdf_volunteers/data/api/user_api_service.dart';
+import 'package:mdf/data/api/user_api_service.dart';
 
 import '../models/index.dart';
 

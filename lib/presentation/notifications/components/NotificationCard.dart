@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mdf_volunteers/data/models/index.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
+import 'package:mdf/data/models/index.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/text_styles.dart';
 
 import 'notification_button.dart';
 

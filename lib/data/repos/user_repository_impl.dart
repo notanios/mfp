@@ -2,8 +2,8 @@ import 'dart:ffi';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:mdf_volunteers/data/api/distrincts_data_source.dart';
-import 'package:mdf_volunteers/data/models/index.dart';
+import 'package:mdf/data/api/distrincts_data_source.dart';
+import 'package:mdf/data/models/index.dart';
 
 import '../api/user_api_data_source.dart';
 import '../models/failure/failure.dart';

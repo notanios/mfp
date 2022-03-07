@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/text_styles.dart';
 
 class SimpleAppBar extends AppBar {
   final String? titleKey;

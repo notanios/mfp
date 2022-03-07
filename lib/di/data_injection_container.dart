@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/data/api/distrincts_data_source.dart';
-import 'package:mdf_volunteers/data/api/user_api_data_source.dart';
-import 'package:mdf_volunteers/data/constants/env_constants.dart';
-import 'package:mdf_volunteers/data/repos/user_repository_impl.dart';
+import 'package:mdf/data/api/distrincts_data_source.dart';
+import 'package:mdf/data/api/user_api_data_source.dart';
+import 'package:mdf/data/constants/env_constants.dart';
+import 'package:mdf/data/repos/user_repository_impl.dart';
 
 Future<void> initData() async {
   //Dio clients

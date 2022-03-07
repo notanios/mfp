@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mdf_volunteers/presentation/components/checkbox_comp.dart';
-import 'package:mdf_volunteers/presentation/styles/strings.dart';
+import 'package:mdf/presentation/components/checkbox_comp.dart';
+import 'package:mdf/presentation/styles/strings.dart';
 
 import '../styles/app_colors.dart';
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/base.dart';
-import 'package:mdf_volunteers/presentation/components/secondary_button.dart';
-import 'package:mdf_volunteers/presentation/profile/profile_controller.dart';
-import 'package:mdf_volunteers/presentation/profile_form/profile_form.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
+import 'package:mdf/base.dart';
+import 'package:mdf/presentation/components/secondary_button.dart';
+import 'package:mdf/presentation/profile/profile_controller.dart';
+import 'package:mdf/presentation/profile_form/profile_form.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
 
 import '../styles/strings.dart';
 import '../styles/text_styles.dart';

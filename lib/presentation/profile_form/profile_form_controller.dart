@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mdf_volunteers/data/models/failure/failure.dart';
-import 'package:mdf_volunteers/data/models/index.dart';
-import 'package:mdf_volunteers/data/repos/user_repository_impl.dart';
-import 'package:mdf_volunteers/presentation/components/checkbox_comp.dart';
+import 'package:mdf/data/models/failure/failure.dart';
+import 'package:mdf/data/models/index.dart';
+import 'package:mdf/data/repos/user_repository_impl.dart';
+import 'package:mdf/presentation/components/checkbox_comp.dart';
 
 class ProfileFormController extends GetxController {
   final UserRepository userRepository;

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
+import 'package:mdf/presentation/styles/app_colors.dart';
 
 import 'app_fonts.dart';
 
