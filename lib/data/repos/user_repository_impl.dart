@@ -11,6 +11,8 @@ import '../models/failure/failure.dart';
 abstract class UserRepository {
   Future<Either<Failure, UserApiDto>> login(phoneNumber);
   Future<Either<Failure, List<Distrinct>>> getDistricts();
+
+  Future<Either<Failure, List<Distrinct>>> sendFirebaseToken(String token) {}
 }
 
 class UserRepositoryImpl extends UserRepository {

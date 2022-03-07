@@ -50,6 +50,7 @@ dependencies:
   libphonenumber: ^2.0.2
   flutter_switch: ^0.3.2
   firebase_core: ^1.12.0
+  firebase_messaging: ^11.2.8
 
 dev_dependencies:
   flutter_test:

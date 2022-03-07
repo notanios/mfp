@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,22 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp>{
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _initPushNotifications();
+  }
+
+
+  void _initPushNotifications() async {
+    await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+      alert: true, // Required to display a heads up notification
+      badge: true,
+      sound: true,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
