@@ -10,4 +10,11 @@ class AppColors {
   static const Color tuna = Color(0xFF3C3C43);
   static const Color red = Color(0xFFF2461D);
   static const Color transparent = Color(0x00FFFFFF);
+  static const Color cardBg = Color(0xFFFCFCFC);
+
+  static const Color dividerColor = Color(0xFFDEDEDE);
+  static const Color green = Color(0xFF32C700);
+
+
+
 }

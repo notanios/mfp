@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mdf_volunteers/base.dart';
 import 'package:mdf_volunteers/presentation/code_verification/phone_code_controller.dart';
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
+import 'package:mdf_volunteers/routes/app_pages.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 import '../styles/strings.dart';
@@ -55,7 +57,7 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
                     },
                     appContext: context,
                     onCompleted: (value) {
-                      print("PhoneCodeScreen onCompleted $value");
+                      Get.toNamed(Routes.REGISTER);
                     },
                   ),
                 ),

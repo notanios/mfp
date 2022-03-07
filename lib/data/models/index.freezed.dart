@@ -491,3 +491,240 @@ abstract class _Distrinct implements Distrinct {
   _$DistrinctCopyWith<_Distrinct> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+Notifications _$NotificationsFromJson(Map<String, dynamic> json) {
+  return _Notifications.fromJson(json);
+}
+
+/// @nodoc
+class _$NotificationsTearOff {
+  const _$NotificationsTearOff();
+
+  _Notifications call(
+      {@JsonKey(name: 'id', defaultValue: 0) int id = 0,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'description') String? descriptions,
+      @JsonKey(name: 'status') String? status}) {
+    return _Notifications(
+      id: id,
+      type: type,
+      descriptions: descriptions,
+      status: status,
+    );
+  }
+
+  Notifications fromJson(Map<String, Object?> json) {
+    return Notifications.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Notifications = _$NotificationsTearOff();
+
+/// @nodoc
+mixin _$Notifications {
+  @JsonKey(name: 'id', defaultValue: 0)
+  int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
+  String? get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'description')
+  String? get descriptions => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status')
+  String? get status => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NotificationsCopyWith<Notifications> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotificationsCopyWith<$Res> {
+  factory $NotificationsCopyWith(
+          Notifications value, $Res Function(Notifications) then) =
+      _$NotificationsCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'description') String? descriptions,
+      @JsonKey(name: 'status') String? status});
+}
+
+/// @nodoc
+class _$NotificationsCopyWithImpl<$Res>
+    implements $NotificationsCopyWith<$Res> {
+  _$NotificationsCopyWithImpl(this._value, this._then);
+
+  final Notifications _value;
+  // ignore: unused_field
+  final $Res Function(Notifications) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? descriptions = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      descriptions: descriptions == freezed
+          ? _value.descriptions
+          : descriptions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$NotificationsCopyWith<$Res>
+    implements $NotificationsCopyWith<$Res> {
+  factory _$NotificationsCopyWith(
+          _Notifications value, $Res Function(_Notifications) then) =
+      __$NotificationsCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'description') String? descriptions,
+      @JsonKey(name: 'status') String? status});
+}
+
+/// @nodoc
+class __$NotificationsCopyWithImpl<$Res>
+    extends _$NotificationsCopyWithImpl<$Res>
+    implements _$NotificationsCopyWith<$Res> {
+  __$NotificationsCopyWithImpl(
+      _Notifications _value, $Res Function(_Notifications) _then)
+      : super(_value, (v) => _then(v as _Notifications));
+
+  @override
+  _Notifications get _value => super._value as _Notifications;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? descriptions = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_Notifications(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      descriptions: descriptions == freezed
+          ? _value.descriptions
+          : descriptions // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Notifications implements _Notifications {
+  _$_Notifications(
+      {@JsonKey(name: 'id', defaultValue: 0) this.id = 0,
+      @JsonKey(name: 'type') this.type,
+      @JsonKey(name: 'description') this.descriptions,
+      @JsonKey(name: 'status') this.status});
+
+  factory _$_Notifications.fromJson(Map<String, dynamic> json) =>
+      _$$_NotificationsFromJson(json);
+
+  @override
+  @JsonKey(name: 'id', defaultValue: 0)
+  final int id;
+  @override
+  @JsonKey(name: 'type')
+  final String? type;
+  @override
+  @JsonKey(name: 'description')
+  final String? descriptions;
+  @override
+  @JsonKey(name: 'status')
+  final String? status;
+
+  @override
+  String toString() {
+    return 'Notifications(id: $id, type: $type, descriptions: $descriptions, status: $status)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Notifications &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality()
+                .equals(other.descriptions, descriptions) &&
+            const DeepCollectionEquality().equals(other.status, status));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(descriptions),
+      const DeepCollectionEquality().hash(status));
+
+  @JsonKey(ignore: true)
+  @override
+  _$NotificationsCopyWith<_Notifications> get copyWith =>
+      __$NotificationsCopyWithImpl<_Notifications>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_NotificationsToJson(this);
+  }
+}
+
+abstract class _Notifications implements Notifications {
+  factory _Notifications(
+      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      @JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'description') String? descriptions,
+      @JsonKey(name: 'status') String? status}) = _$_Notifications;
+
+  factory _Notifications.fromJson(Map<String, dynamic> json) =
+      _$_Notifications.fromJson;
+
+  @override
+  @JsonKey(name: 'id', defaultValue: 0)
+  int get id;
+  @override
+  @JsonKey(name: 'type')
+  String? get type;
+  @override
+  @JsonKey(name: 'description')
+  String? get descriptions;
+  @override
+  @JsonKey(name: 'status')
+  String? get status;
+  @override
+  @JsonKey(ignore: true)
+  _$NotificationsCopyWith<_Notifications> get copyWith =>
+      throw _privateConstructorUsedError;
+}

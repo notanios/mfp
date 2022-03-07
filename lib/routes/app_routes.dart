@@ -6,4 +6,5 @@ abstract class Routes {
   static const PHONE_CODE = '/phone_code';
   static const PROFILE = '/profile';
   static const REGISTER = '/register';
+  static const NOTIFICATIONS = '/notifications';
 }

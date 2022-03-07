@@ -22,5 +22,7 @@ class Strings {
  static const String datele_tale = "Datele tale:";
  static const String iesi_din_cont = "Ieși din cont";
  static const String intra_in_cont = "Intră în cont";
+ static const String availability = "Disponibilitate";
+ static const String solicitari = "Solicitări:";
  //static const String telefon = "Telefon";
 }

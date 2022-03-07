@@ -8,6 +8,7 @@ import 'package:mdf_volunteers/presentation/profile_form/profile_form_controller
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
 import 'package:mdf_volunteers/presentation/styles/strings.dart';
 import 'package:mdf_volunteers/presentation/styles/text_styles.dart';
+import 'package:mdf_volunteers/routes/app_pages.dart';
 
 class ProfileForm extends GetView<ProfileFormController> {
   final FocusNode _firstnameFocusNode = FocusNode();
@@ -153,7 +154,7 @@ class ProfileForm extends GetView<ProfileFormController> {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15),
           child: Obx(() => PrimaryButton(
-                () => {},
+                () => {Get.toNamed(Routes.NOTIFICATIONS)},
                 title: Strings.intra_in_cont,
                 enabled: controller.isFormValid.value,
               )),

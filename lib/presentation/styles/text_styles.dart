@@ -10,6 +10,17 @@ class TextStyles {
       fontWeight: FontWeight.w500,
       fontSize: 16);
 
+  static TextStyle bold = const TextStyle(fontFamily: Fonts.Roboto_Bold,
+      color: AppColors.santasGray,
+      fontWeight: FontWeight.w700,
+      fontSize: 16);
+
+  static TextStyle medium = const TextStyle(fontFamily: Fonts.Roboto_Medium,
+      color: AppColors.santasGray,
+      fontWeight: FontWeight.w600,
+      fontSize: 16);
+
+
   static TextStyle welcomeScreenHeader =  const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
       color: AppColors.darkBlue,
@@ -37,7 +48,7 @@ class TextStyles {
 
   static TextStyle welcomeScreenOptions = const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
-      color: AppColors.tuna,
+      color: AppColors.santasGray,
       fontWeight: FontWeight.bold,
       fontSize: 18);
 

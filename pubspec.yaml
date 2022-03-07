@@ -48,6 +48,7 @@ dependencies:
   flutter_svg: ^1.0.3
   country_code_picker: ^2.0.2
   libphonenumber: ^2.0.2
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:mdf_volunteers/presentation/code_verification/phone_code_screen.dart';
 import 'package:mdf_volunteers/presentation/login/login_binding.dart';
+import 'package:mdf_volunteers/presentation/notifications/notifications_binding.dart';
+import 'package:mdf_volunteers/presentation/notifications/notifications_screen.dart';
 import 'package:mdf_volunteers/presentation/profile/profile_screen.dart';
 import 'package:mdf_volunteers/presentation/profile_form/profile_form_binding.dart';
 import 'package:mdf_volunteers/presentation/register/register_screen.dart';
@@ -20,10 +22,17 @@ class AppPages {
     ),
     GetPage(name: Routes.WELCOME, page: () => WelcomeScreen()),
     GetPage(name: Routes.PHONE_CODE, page: () => PhoneCodeScreen()),
-    GetPage(name: Routes.PROFILE, page: () => ProfileScreen()),
+    GetPage(
+        name: Routes.PROFILE,
+        page: () => ProfileScreen(),
+        bindings: [ProfileFormBinding()]),
     GetPage(
         name: Routes.REGISTER,
         page: () => RegisterScreen(),
-        bindings: [ProfileFormBinding()])
+        bindings: [ProfileFormBinding()]),
+    GetPage(
+        name: Routes.NOTIFICATIONS,
+        page: () => NotificationsScreen(),
+        bindings: [NotificationsBinding()]),
   ];
 }
