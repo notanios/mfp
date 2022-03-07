@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:mdf_volunteers/data/repos/user_repository_impl.dart';
 
 class LoginController extends GetxController with StateMixin<String> {
+  final UserRepository userRepository;
   LoginController({required this.userRepository});
   var isNumberValid = false.obs;
   var isLoading = false.obs;
 
   TextEditingController inputController = TextEditingController();
 
-  final UserRepository userRepository;
   CountryCode? _selectedCountryCode = null;
 
   @override

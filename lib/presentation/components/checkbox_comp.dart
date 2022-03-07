@@ -43,12 +43,11 @@ class CheckBoxComponentState extends State<CheckboxComponent> {
             fillColor: MaterialStateProperty.resolveWith(getColor),
             value: isChecked,
             onChanged: (bool? value) {
+              isChecked = value!;
+              if (widget.onChanged != null) {
+                widget.onChanged!(isChecked);
+              }
               setState(() {
-                print("Checkbox onChanged $value");
-                isChecked = value!;
-                if (widget.onChanged != null) {
-                  widget.onChanged!(isChecked);
-                }
               });
             },
           ),

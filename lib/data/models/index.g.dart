@@ -29,3 +29,14 @@ Map<String, dynamic> _$$_UserResponseApiDtoToJson(
     <String, dynamic>{
       'data': instance.data,
     };
+
+_$_Distrinct _$$_DistrinctFromJson(Map<String, dynamic> json) => _$_Distrinct(
+      code: json['code'] as String?,
+      name: json['name'] as String?,
+    );
+
+Map<String, dynamic> _$$_DistrinctToJson(_$_Distrinct instance) =>
+    <String, dynamic>{
+      'code': instance.code,
+      'name': instance.name,
+    };

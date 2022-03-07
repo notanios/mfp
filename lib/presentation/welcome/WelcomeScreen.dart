@@ -47,7 +47,7 @@ class WelcomeScreen extends GetView {
             ),
           ),
           Padding(padding: const EdgeInsets.only(top: 120),child: PrimaryButton(() => {
-            Get.toNamed(Routes.PHONE_CODE)
+            Get.toNamed(Routes.REGISTER)
           }, title: Strings.intra_in_cont,))
         ],
       ),

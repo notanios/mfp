@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:get/get.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
+import 'package:mdf_volunteers/data/api/distrincts_data_source.dart';
 import 'package:mdf_volunteers/data/api/user_api_data_source.dart';
 import 'package:mdf_volunteers/data/constants/env_constants.dart';
 import 'package:mdf_volunteers/data/repos/user_repository_impl.dart';
@@ -26,12 +27,16 @@ Future<void> initData() async {
       responseHeader: !kReleaseMode));
 
   ///  ---------------------- ----------------------DataSources ---------------------- ---------------------- ----------------------
-  Get.lazyPut<UserApiDataSource>(() => UserApiDataSourceImpl(dioClient: _apiClient));
+  Get.lazyPut<UserApiDataSource>(
+      () => UserApiDataSourceImpl(dioClient: _apiClient));
+  Get.lazyPut<DistrictsDataSource>(() => DistrictsDataSourceImpl());
 
   ///  -------------------------------------------- ---------------------- --------------------------------------------
 
   /// ---------------------- ----------------------Repositories ---------------------- ---------------------- ----------
-  Get.lazyPut<UserRepository>(() => UserRepositoryImpl(userApiDataSource: Get.find<UserApiDataSource>()));
+  Get.lazyPut<UserRepository>(() => UserRepositoryImpl(
+      userApiDataSource: Get.find<UserApiDataSource>(),
+      districtsDataSource: Get.find<DistrictsDataSource>()));
 
   ///  -------------------------------------------- ---------------------- --------------------------------------------
 }

@@ -5,6 +5,8 @@ import 'package:mdf_volunteers/presentation/styles/strings.dart';
 import '../styles/app_colors.dart';
 
 class CheckboxGroup extends StatefulWidget {
+  const CheckboxGroup({Key? key}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _CheckboxGroupState();

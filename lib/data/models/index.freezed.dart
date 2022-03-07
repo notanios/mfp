@@ -313,3 +313,181 @@ abstract class _UserResponseApiDto implements UserResponseApiDto {
   _$UserResponseApiDtoCopyWith<_UserResponseApiDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+Distrinct _$DistrinctFromJson(Map<String, dynamic> json) {
+  return _Distrinct.fromJson(json);
+}
+
+/// @nodoc
+class _$DistrinctTearOff {
+  const _$DistrinctTearOff();
+
+  _Distrinct call(
+      {@JsonKey(name: 'code') String? code,
+      @JsonKey(name: 'name') String? name}) {
+    return _Distrinct(
+      code: code,
+      name: name,
+    );
+  }
+
+  Distrinct fromJson(Map<String, Object?> json) {
+    return Distrinct.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Distrinct = _$DistrinctTearOff();
+
+/// @nodoc
+mixin _$Distrinct {
+  @JsonKey(name: 'code')
+  String? get code => throw _privateConstructorUsedError;
+  @JsonKey(name: 'name')
+  String? get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DistrinctCopyWith<Distrinct> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DistrinctCopyWith<$Res> {
+  factory $DistrinctCopyWith(Distrinct value, $Res Function(Distrinct) then) =
+      _$DistrinctCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'code') String? code,
+      @JsonKey(name: 'name') String? name});
+}
+
+/// @nodoc
+class _$DistrinctCopyWithImpl<$Res> implements $DistrinctCopyWith<$Res> {
+  _$DistrinctCopyWithImpl(this._value, this._then);
+
+  final Distrinct _value;
+  // ignore: unused_field
+  final $Res Function(Distrinct) _then;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_value.copyWith(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$DistrinctCopyWith<$Res> implements $DistrinctCopyWith<$Res> {
+  factory _$DistrinctCopyWith(
+          _Distrinct value, $Res Function(_Distrinct) then) =
+      __$DistrinctCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'code') String? code,
+      @JsonKey(name: 'name') String? name});
+}
+
+/// @nodoc
+class __$DistrinctCopyWithImpl<$Res> extends _$DistrinctCopyWithImpl<$Res>
+    implements _$DistrinctCopyWith<$Res> {
+  __$DistrinctCopyWithImpl(_Distrinct _value, $Res Function(_Distrinct) _then)
+      : super(_value, (v) => _then(v as _Distrinct));
+
+  @override
+  _Distrinct get _value => super._value as _Distrinct;
+
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? name = freezed,
+  }) {
+    return _then(_Distrinct(
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Distrinct implements _Distrinct {
+  _$_Distrinct(
+      {@JsonKey(name: 'code') this.code, @JsonKey(name: 'name') this.name});
+
+  factory _$_Distrinct.fromJson(Map<String, dynamic> json) =>
+      _$$_DistrinctFromJson(json);
+
+  @override
+  @JsonKey(name: 'code')
+  final String? code;
+  @override
+  @JsonKey(name: 'name')
+  final String? name;
+
+  @override
+  String toString() {
+    return 'Distrinct(code: $code, name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Distrinct &&
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.name, name));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(name));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DistrinctCopyWith<_Distrinct> get copyWith =>
+      __$DistrinctCopyWithImpl<_Distrinct>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DistrinctToJson(this);
+  }
+}
+
+abstract class _Distrinct implements Distrinct {
+  factory _Distrinct(
+      {@JsonKey(name: 'code') String? code,
+      @JsonKey(name: 'name') String? name}) = _$_Distrinct;
+
+  factory _Distrinct.fromJson(Map<String, dynamic> json) =
+      _$_Distrinct.fromJson;
+
+  @override
+  @JsonKey(name: 'code')
+  String? get code;
+  @override
+  @JsonKey(name: 'name')
+  String? get name;
+  @override
+  @JsonKey(ignore: true)
+  _$DistrinctCopyWith<_Distrinct> get copyWith =>
+      throw _privateConstructorUsedError;
+}
