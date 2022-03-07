@@ -8,12 +8,12 @@ class SecondaryButton extends StatelessWidget {
   final bool enabled;
   final String title;
 
-  SecondaryButton(this.onPressed, {Key? key, this.enabled = true, required this.title}) : super(key: key);
+  const SecondaryButton(this.onPressed, {Key? key, this.enabled = true, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 50),
+      constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 45),
       child: OutlinedButton(
         style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),

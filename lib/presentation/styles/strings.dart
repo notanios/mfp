@@ -35,6 +35,8 @@ class Strings {
 
  static const String general_error = "Sistemul este indisponibil. Încearcă mai târziu.";
  static const String no_internet_connection = "Nu a fost detectată conexiune la internet, vă rugăm să încercați din nou.";
+ static const String accept = "Acceaptă";
+ static const String ignore = "Ignoră";
 
 //static const String telefon = "Telefon";
 }

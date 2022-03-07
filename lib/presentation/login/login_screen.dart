@@ -40,7 +40,7 @@ class LoginScreen extends GetView<LoginController> {
                           padding: const EdgeInsets.only(bottom: 35.0),
                           child: Text(
                             Strings.insert_number,
-                            style: TextStyles.medium.copyWith(color: AppColors.darkBlue, fontSize: 20),
+                            style: TextStyles.medium.copyWith(color: AppColors.black, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
                         ),

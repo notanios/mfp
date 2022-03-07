@@ -24,7 +24,7 @@ class NotificationButton extends StatelessWidget {
         style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             backgroundColor: MaterialStateProperty.all<Color>(background),
-            textStyle: MaterialStateProperty.all<TextStyle>(TextStyles.bold
+            textStyle: MaterialStateProperty.all<TextStyle>(TextStyles.medium
                 .copyWith(color: AppColors.white, fontSize: 13))),
         onPressed: () {
           if (enabled) {

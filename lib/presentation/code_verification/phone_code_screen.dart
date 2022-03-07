@@ -42,7 +42,7 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
                           child: Text(
                             Strings.introdu_codul,
                             style: TextStyles.medium.copyWith(
-                                color: AppColors.darkBlue, fontSize: 20),
+                                color: AppColors.black, fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
                         ),

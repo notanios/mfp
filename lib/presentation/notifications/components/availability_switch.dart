@@ -49,6 +49,7 @@ class AvailabilitySwitchState extends State<AvailabilitySwitch> {
           toggleSize: 20.0,
           value: isChecked,
           borderRadius: 30.0,
+          activeColor: AppColors.primaryBlue,
           padding: 2.0,
           showOnOff: false,
           onToggle: (val) {

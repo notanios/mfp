@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mdf/presentation/components/no_overscroll_behavior.dart';
 import 'package:mdf/presentation/components/simple_app_bar.dart';
-import 'package:mdf/presentation/notifications/components/NotificationCard.dart';
+import 'package:mdf/presentation/notifications/components/notification_card.dart';
 import 'package:mdf/presentation/notifications/notifications_controller.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -84,7 +84,16 @@ class NotificationsScreen extends GetView<NotificationsController> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      color: AppColors.black.withAlpha(7),
+                      decoration: BoxDecoration(
+                          color: AppColors.cardBg,
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.black.withOpacity(0.1),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(3, 1),
+                            )
+                          ]),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 15),
                       child: AvailabilitySwitch(),
@@ -99,7 +108,7 @@ class NotificationsScreen extends GetView<NotificationsController> {
                     ),
                     Expanded(
                         child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
                       child: Obx(() => SmartRefresher(
                             enablePullDown: true,
                             enablePullUp: false,

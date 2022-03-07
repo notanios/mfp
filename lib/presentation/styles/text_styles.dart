@@ -23,7 +23,7 @@ class TextStyles {
 
   static TextStyle welcomeScreenHeader =  const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
-      color: AppColors.darkBlue,
+      color: AppColors.black,
       fontWeight: FontWeight.bold, fontSize: 25);
 
   static TextStyle primaryButtonTextStyle = const TextStyle(
@@ -54,7 +54,7 @@ class TextStyles {
 
   static TextStyle robotoRegular = const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
-      color: AppColors.darkBlue,
+      color: AppColors.black,
       fontWeight: FontWeight.bold,
       fontSize: 12);
 }

@@ -36,7 +36,7 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   Future<List<HelpNotification>> getNotifications() {
    //  return _userApiService.getNotifications();
     var notifications = <HelpNotification>[];
-    notifications.add(HelpNotification(id: 1, type: "Transportare", descriptions: "4 Pers in Palanca", status: "waiting"));
+    notifications.add(HelpNotification(id: 1, type: "Transportare", descriptions: "4 Pers in Palanca", status: "In asteptare"));
     notifications.add(HelpNotification(id: 1, type: "Transportare", descriptions: "4 Pers in Palanca", status: "waiting"));
     notifications.add(HelpNotification(id: 1, type: "Transportare", descriptions: "4 Pers in Palanca", status: "waiting"));
     notifications.add(HelpNotification(id: 1, type: "Transportare", descriptions: "4 Pers in Palanca", status: "waiting"));
