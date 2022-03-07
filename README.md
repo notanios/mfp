@@ -20,7 +20,7 @@
 ### Code generation
  This project uses code generators:
 
- 1) models/ - uses **freezed** to generate action models;
+ 1) models/ - uses **freezed** to data models;
 
  Each time you modify any of these files/modules - you'll have to generate the code using **flutter pub run build_runner build --delete-conflicting-outputs**  or **upcode flutter:buildrunner**
 
