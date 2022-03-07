@@ -14,7 +14,8 @@ class SimpleAppBar extends AppBar {
   final VoidCallback? onBackTap;
 
   SimpleAppBar(
-    this.context, {Key? key,
+    this.context, {
+    Key? key,
     this.titleKey,
     this.showBack = false,
     this.rightWidget,
@@ -37,13 +38,15 @@ class SimpleAppBar extends AppBar {
           children: [
             Row(
               children: [
-                 backWidget(context, colorIcon: colorBackIcon, onBackTap: onBackTap),
+                backWidget(context, colorIcon: colorBackIcon, onBackTap: onBackTap),
               ],
             ),
+            Container(
+                child: Text(titleKey != null ? titleKey! : "", style: TextStyles.medium.copyWith(color: AppColors.black, fontSize: 19),)),
             rightWidget != null
                 ? rightWidget!
                 : Container(
-                    width: 0,
+                    width: 48,
                   ),
           ],
         ),
@@ -53,7 +56,7 @@ class SimpleAppBar extends AppBar {
   Color? get backgroundColor => colorBackGround ?? AppColors.white;
 
   @override
-  double? get elevation => 0;
+  double? get elevation => 0.2;
 
   @override
   double? get titleSpacing => 0;
@@ -62,7 +65,8 @@ class SimpleAppBar extends AppBar {
   PreferredSizeWidget? get bottom => bottomWidget;
 }
 
-Widget backWidget(BuildContext context, {VoidCallback? onBackTap, Color? colorIcon}) {
+Widget backWidget(BuildContext context,
+    {VoidCallback? onBackTap, Color? colorIcon}) {
   return Material(
     color: Colors.transparent,
     child: InkResponse(
@@ -75,9 +79,16 @@ Widget backWidget(BuildContext context, {VoidCallback? onBackTap, Color? colorIc
         }
       },
       child: Container(
-        height: 50,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: SizedBox(width: 32, height: 32, child: SvgPicture.asset('assets/back.svg', color: AppColors.black,),),
+        height: 48,
+        width: 48,
+        child: SizedBox(
+          width: 32,
+          height: 32,
+          child: SvgPicture.asset(
+            'assets/back.svg',
+            color: AppColors.black,
+          ),
+        ),
       ),
     ),
   );

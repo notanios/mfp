@@ -6,7 +6,7 @@ import 'package:mdf_volunteers/presentation/notifications/notifications_screen.d
 import 'package:mdf_volunteers/presentation/profile/profile_screen.dart';
 import 'package:mdf_volunteers/presentation/profile_form/profile_form_binding.dart';
 import 'package:mdf_volunteers/presentation/register/register_screen.dart';
-import 'package:mdf_volunteers/presentation/welcome/WelcomeScreen.dart';
+import 'package:mdf_volunteers/presentation/welcome/welcome_screen.dart';
 
 import '../presentation/login/login_screen.dart';
 

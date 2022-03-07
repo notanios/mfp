@@ -13,9 +13,10 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 50),
+      constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 45),
       child: OutlinedButton(
         style: ButtonStyle(
+           elevation: MaterialStateProperty.all<double>(enabled ? 2 : 0),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
             backgroundColor: MaterialStateProperty.all<Color>(enabled ? AppColors.primaryBlue : AppColors.primaryBlue.withAlpha(80)),
             textStyle: MaterialStateProperty.all<TextStyle>(

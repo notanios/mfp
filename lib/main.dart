@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
-import 'package:mdf_volunteers/presentation/welcome/WelcomeScreen.dart';
+import 'package:mdf_volunteers/presentation/welcome/welcome_screen.dart';
 import 'package:mdf_volunteers/routes/app_pages.dart';
 
 import 'di/injection_container.dart';

@@ -24,5 +24,9 @@ class Strings {
  static const String intra_in_cont = "Intră în cont";
  static const String availability = "Disponibilitate";
  static const String solicitari = "Solicitări:";
- //static const String telefon = "Telefon";
+ static const String register = "Înregistrează-te";
+ static const String insert_number = "Introdu numărul tău de telefon pentru a te putea identifica în sistem";
+ static const String register_header = "Înregistrare";
+
+//static const String telefon = "Telefon";
 }

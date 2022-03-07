@@ -7,24 +7,24 @@ import 'app_fonts.dart';
 class TextStyles {
   static TextStyle regular = const TextStyle(fontFamily: Fonts.Roboto_Regular,
       color: AppColors.santasGray,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w400,
       fontSize: 16);
 
   static TextStyle bold = const TextStyle(fontFamily: Fonts.Roboto_Bold,
       color: AppColors.santasGray,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w900,
       fontSize: 16);
 
   static TextStyle medium = const TextStyle(fontFamily: Fonts.Roboto_Medium,
       color: AppColors.santasGray,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
       fontSize: 16);
 
 
   static TextStyle welcomeScreenHeader =  const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
       color: AppColors.darkBlue,
-      fontWeight: FontWeight.bold, fontSize: 28);
+      fontWeight: FontWeight.bold, fontSize: 25);
 
   static TextStyle primaryButtonTextStyle = const TextStyle(
       fontFamily: Fonts.Roboto_Regular,
