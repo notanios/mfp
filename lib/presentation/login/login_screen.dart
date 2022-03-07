@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:mdf_volunteers/base.dart';
+import 'package:mdf_volunteers/presentation/components/simple_app_bar.dart';
 import 'package:mdf_volunteers/presentation/login/login_controller.dart';
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
 import 'package:mdf_volunteers/presentation/styles/strings.dart';
+import 'package:mdf_volunteers/routes/app_pages.dart';
 
 import '../components/input_field.dart';
 import '../components/primary_button.dart';
@@ -16,12 +18,14 @@ class LoginScreen extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    return BasePage(builder: (context) {
+    return BasePage(
+        appBar: SimpleAppBar(context),
+        builder: (context) {
       return Stack(
         children: [
           Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 50.0, horizontal: 20),
+                  const EdgeInsets.symmetric(vertical: 30.0, horizontal: 20),
               child: Text(
                 Strings.fii_voluntar,
                 style: TextStyles.welcomeScreenHeader,
@@ -90,8 +94,10 @@ class LoginScreen extends GetView<LoginController> {
                                 child: Obx(
                                   () => PrimaryButton(
                                     () => {
+                                      Get.toNamed(Routes.PHONE_CODE)
+                                      /*
                                       controller.getUsers(
-                                          controller.inputController.text)
+                                          controller.inputController.text)*/
                                     },
                                     enabled: controller.isNumberValid.value,
                                     title: Strings.intra_in_cont,

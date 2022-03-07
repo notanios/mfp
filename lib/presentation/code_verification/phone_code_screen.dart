@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mdf_volunteers/base.dart';
 import 'package:mdf_volunteers/presentation/code_verification/phone_code_controller.dart';
+import 'package:mdf_volunteers/presentation/components/simple_app_bar.dart';
 import 'package:mdf_volunteers/presentation/styles/app_colors.dart';
 import 'package:mdf_volunteers/routes/app_pages.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -17,14 +18,15 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-        // appBar: SimpleAppBar(context),
+         appBar: SimpleAppBar(context),
         builder: (context) {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-                padding: const EdgeInsets.only(top: 50.0),
+                padding: const EdgeInsets.only(top: 30.0),
                 child: Text(
                   Strings.fii_voluntar,
                   style: TextStyles.welcomeScreenHeader,
@@ -62,7 +64,8 @@ class PhoneCodeScreen extends GetView<PhoneCodeController> {
                   ),
                 ),
               ],
-            )
+            ),
+            Container(height: 300,)
           ],
         ),
       );
