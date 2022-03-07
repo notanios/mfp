@@ -501,7 +501,7 @@ class _$NotificationsTearOff {
   const _$NotificationsTearOff();
 
   _Notifications call(
-      {@JsonKey(name: 'id', defaultValue: 0) int id = 0,
+      {@JsonKey(name: 'id') int id = 0,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
       @JsonKey(name: 'status') String? status}) {
@@ -523,7 +523,7 @@ const $Notifications = _$NotificationsTearOff();
 
 /// @nodoc
 mixin _$Notifications {
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'type')
   String? get type => throw _privateConstructorUsedError;
@@ -544,7 +544,7 @@ abstract class $NotificationsCopyWith<$Res> {
           Notifications value, $Res Function(Notifications) then) =
       _$NotificationsCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
       @JsonKey(name: 'status') String? status});
@@ -595,7 +595,7 @@ abstract class _$NotificationsCopyWith<$Res>
       __$NotificationsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
       @JsonKey(name: 'status') String? status});
@@ -644,7 +644,7 @@ class __$NotificationsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Notifications implements _Notifications {
   _$_Notifications(
-      {@JsonKey(name: 'id', defaultValue: 0) this.id = 0,
+      {@JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'type') this.type,
       @JsonKey(name: 'description') this.descriptions,
       @JsonKey(name: 'status') this.status});
@@ -653,7 +653,7 @@ class _$_Notifications implements _Notifications {
       _$$_NotificationsFromJson(json);
 
   @override
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: 'id')
   final int id;
   @override
   @JsonKey(name: 'type')
@@ -703,7 +703,7 @@ class _$_Notifications implements _Notifications {
 
 abstract class _Notifications implements Notifications {
   factory _Notifications(
-      {@JsonKey(name: 'id', defaultValue: 0) int id,
+      {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'type') String? type,
       @JsonKey(name: 'description') String? descriptions,
       @JsonKey(name: 'status') String? status}) = _$_Notifications;
@@ -712,7 +712,7 @@ abstract class _Notifications implements Notifications {
       _$_Notifications.fromJson;
 
   @override
-  @JsonKey(name: 'id', defaultValue: 0)
+  @JsonKey(name: 'id')
   int get id;
   @override
   @JsonKey(name: 'type')

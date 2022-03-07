@@ -1,21 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
+import 'package:mdf/push_notifications_controller.dart';
 import 'package:mdf/routes/app_pages.dart';
 
 import 'di/injection_container.dart';
 
-void main() {
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) async {
     await initDi();
     runApp(const MyApp());
   });
 }
-
-
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -29,18 +31,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp>{
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _initPushNotifications();
-  }
-
-
-  void _initPushNotifications() async {
-    await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
-      alert: true, // Required to display a heads up notification
-      badge: true,
-      sound: true,
-    );
   }
 
   @override

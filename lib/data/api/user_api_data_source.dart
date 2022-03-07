@@ -5,6 +5,8 @@ import '../models/index.dart';
 
 abstract class UserApiDataSource {
   Future<UserResponseApiDto> login(String phoneNumber);
+
+  Future <dynamic> sendFirebaseToken(String token);
 }
 
 class UserApiDataSourceImpl implements UserApiDataSource {
@@ -16,5 +18,10 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   @override
   Future<UserResponseApiDto> login(String phoneNumber) {
     return _userApiService.login(phoneNumber);
+  }
+
+  @override
+  Future sendFirebaseToken(String token) {
+    return _userApiService.sendFirebaseToken(token);
   }
 }

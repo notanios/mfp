@@ -12,7 +12,7 @@ abstract class UserRepository {
   Future<Either<Failure, UserApiDto>> login(phoneNumber);
   Future<Either<Failure, List<Distrinct>>> getDistricts();
 
-  Future<Either<Failure, List<Distrinct>>> sendFirebaseToken(String token) {}
+  Future<Either<Failure, dynamic>> sendFirebaseToken(String token);
 }
 
 class UserRepositoryImpl extends UserRepository {
@@ -42,6 +42,16 @@ class UserRepositoryImpl extends UserRepository {
      }catch (e){
        return Left(ServerFailure(errorObject: e));
      }
+  }
+
+  @override
+  Future<Either<Failure, dynamic>> sendFirebaseToken(String token) async {
+      try {
+        final response = await userApiDataSource.sendFirebaseToken(token);
+        return Right(response);
+      }catch (e){
+        return Left(ServerFailure(errorObject: e));
+      }
   }
 
 }

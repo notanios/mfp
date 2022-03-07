@@ -1,14 +1,20 @@
 import 'package:get/get.dart';
 import 'package:mdf/data/models/index.dart';
 
+import '../../push_notifications_controller.dart';
+
 class NotificationsController extends GetxController {
   List<Notifications> notifications = [];
-
 
   @override
   void onInit() {
     super.onInit();
+    _initPushNotifications();
     syncNotifications();
+  }
+
+  void _initPushNotifications() {
+    PushNotificationsController().init();
   }
 
   void syncNotifications(){

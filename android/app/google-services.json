@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "345457831928",
+    "project_id": "moldova4peace",
+    "storage_bucket": "moldova4peace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345457831928:android:09d368d3f8c7e50d9f300d",
+        "android_client_info": {
+          "package_name": "com.mfp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345457831928-4334ip931rdcf6ghe08h11t7r8km3bmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mfp",
+            "certificate_hash": "b0213306a5170e9c2741e767725d2e9a32e75d6b"
+          }
+        },
+        {
+          "client_id": "345457831928-tinpi16g4v8mug0ttesqshkb37dlbh3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mfp",
+            "certificate_hash": "17ee6d138024de41e4bde4fb78be3178ceed79a7"
+          }
+        },
+        {
+          "client_id": "345457831928-fffduojkv521sij9f89dcsv0gk71h8pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5DYunl9YettG1osdOJ5X6mwgJMr43Y-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345457831928-fffduojkv521sij9f89dcsv0gk71h8pr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

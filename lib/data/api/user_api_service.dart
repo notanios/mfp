@@ -13,4 +13,7 @@ abstract class UserApiService {
 
   @GET('/v1/passenger')
   Future<UserResponseApiDto> login(@Query('phone_number')String phoneNumber);
+
+  @POST("/token")
+  Future sendFirebaseToken(@Body() String token);
 }
