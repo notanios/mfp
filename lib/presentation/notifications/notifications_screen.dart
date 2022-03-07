@@ -10,6 +10,7 @@ import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/presentation/styles/strings.dart';
 import 'package:mdf/presentation/styles/text_styles.dart';
 
+import '../../routes/app_pages.dart';
 import 'components/availability_switch.dart';
 
 class NotificationsScreen extends GetView<NotificationsController> {
@@ -24,13 +25,13 @@ class NotificationsScreen extends GetView<NotificationsController> {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
               "Salut Pavel",
-              style:
-                  TextStyles.bold.copyWith(fontSize: 25, color: AppColors.black),
+              style: TextStyles.bold
+                  .copyWith(fontSize: 25, color: AppColors.black),
             ),
           ),
           showBack: false,
           rightWidget: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Container(
               child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -38,25 +39,32 @@ class NotificationsScreen extends GetView<NotificationsController> {
                   children: [
                     Row(
                       children: [
-                        SizedBox(
-                          height: 32,
-                          width: 32,
-                          child: SvgPicture.asset(
-                            'assets/question.svg',
-                            color: AppColors.black,
+                        InkWell(
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: const EdgeInsets.all(10),
+                            child: SvgPicture.asset(
+                              'assets/question.svg',
+                              color: AppColors.black,
+                            ),
                           ),
+                          onTap: () {},
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SizedBox(
-                          height: 22,
-                          width: 22,
-                          child: SvgPicture.asset(
-                            'assets/close_icon.svg',
-                            color: AppColors.black,
+                        InkWell(
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: const EdgeInsets.all(12),
+                            child: SvgPicture.asset(
+                              'assets/profile.svg',
+                              color: AppColors.black,
+                            ),
                           ),
-                        ),
+                          onTap: () {
+                            Get.toNamed(Routes.PROFILE);
+                          },
+                        )
                       ],
                     )
                   ]),
@@ -66,18 +74,16 @@ class NotificationsScreen extends GetView<NotificationsController> {
         builder: (context) {
           return Container(
             color: AppColors.white,
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                Container(
+                  color: AppColors.black.withAlpha(7),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 15),
                   child: AvailabilitySwitch(),
-                ),
-                const SizedBox(
-                  height: 20,
                 ),
                 Container(
                   height: 0.3,

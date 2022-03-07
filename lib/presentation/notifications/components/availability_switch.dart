@@ -20,10 +20,10 @@ class AvailabilitySwitchState extends State<AvailabilitySwitch> {
     Color statusColor;
     if (isChecked) {
       availability = Strings.available;
-      statusColor = AppColors.green;
+      statusColor = AppColors.primaryBlue;
     } else {
       availability = Strings.unavailable;
-      statusColor = AppColors.red;
+      statusColor = AppColors.black;
     }
 
     return Row(
@@ -35,18 +35,18 @@ class AvailabilitySwitchState extends State<AvailabilitySwitch> {
           text: TextSpan(
               text: Strings.status,
               style: TextStyles.bold
-                  .copyWith(fontSize: 19, color: AppColors.santasGray),
+                  .copyWith(fontSize: 17, color: AppColors.santasGray),
               children: <TextSpan>[
                 TextSpan(
                     text: availability,
                     style: TextStyles.bold
-                        .copyWith(fontSize: 19, color: statusColor)),
+                        .copyWith(fontSize: 17, color: statusColor)),
               ]),
         ),
         FlutterSwitch(
-          width: 50.0,
-          height: 25.0,
-          toggleSize: 25.0,
+          width: 40.0,
+          height: 20.0,
+          toggleSize: 20.0,
           value: isChecked,
           borderRadius: 30.0,
           padding: 2.0,

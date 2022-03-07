@@ -9,6 +9,7 @@ import 'package:mdf/presentation/register/register_screen.dart';
 import 'package:mdf/presentation/welcome/welcome_screen.dart';
 
 import '../presentation/login/login_screen.dart';
+import '../presentation/notifications/notifications_binding.dart';
 
 part 'app_routes.dart';
 
@@ -32,7 +33,7 @@ class AppPages {
         bindings: [ProfileFormBinding()]),
     GetPage(
         name: Routes.NOTIFICATIONS,
-        page: () => NotificationsScreen(),
+        page: () => const NotificationsScreen(),
         bindings: [NotificationsBinding()]),
   ];
 }

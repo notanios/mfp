@@ -7,6 +7,7 @@ import 'package:mdf/presentation/profile/profile_controller.dart';
 import 'package:mdf/presentation/profile_form/profile_form.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
 
+import '../components/simple_app_bar.dart';
 import '../styles/strings.dart';
 import '../styles/text_styles.dart';
 
@@ -18,8 +19,61 @@ class ProfileScreen extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(builder: (context) {
+    return BasePage(
+        appBar: SimpleAppBar(
+          context,
+          leftWidget: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              "Salut Pavel",
+              style: TextStyles.bold
+                  .copyWith(fontSize: 25, color: AppColors.black),
+            ),
+          ),
+          showBack: false,
+          rightWidget: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Container(
+              child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        InkWell(
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            padding: const EdgeInsets.all(10),
+                            child: SvgPicture.asset(
+                              'assets/question.svg',
+                              color: AppColors.black,
+                            ),
+                          ),
+                          onTap: () {},
+                        ),
+                        InkWell(
+                          child: Container(
+                            width: 48,
+                            height: 48,
+                            child: SvgPicture.asset(
+                              'assets/close_icon.svg',
+                              color: AppColors.black,
+                            ),
+                          ),
+                          onTap: () {
+                            Get.back();
+                          },
+                        )
+                      ],
+                    )
+                  ]),
+            ),
+          ),
+        ),
+        builder: (context) {
       return Container(
+        color: AppColors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -27,40 +81,6 @@ class ProfileScreen extends GetView<ProfileController> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Salut Pavel ",
-                      style: TextStyles.regular
-                          .copyWith(fontSize: 28, color: AppColors.black),
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          height: 32,
-                          width: 32,
-                          child: SvgPicture.asset(
-                            'assets/question.svg',
-                            color: AppColors.black,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        SizedBox(
-                          height: 22,
-                          width: 22,
-                          child: SvgPicture.asset(
-                            'assets/close_icon.svg',
-                            color: AppColors.black,
-                          ),
-                        ),
-                      ],
-                    )
-                  ]),
-              const SizedBox(height: 30),
               Text(
                 Strings.datele_tale,
                 style: TextStyles.regular.copyWith(fontSize: 20),

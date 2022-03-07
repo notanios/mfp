@@ -40,7 +40,7 @@ class WelcomeScreen extends GetView {
               ),
             ),
             PrimaryButton(
-              () => {Get.toNamed(Routes.LOGIN)},
+              () => {Get.toNamed(Routes.NOTIFICATIONS)},
               title: Strings.register,
             ),
             Logo(),
