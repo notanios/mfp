@@ -7,9 +7,9 @@
  - download & install Dart (or set flutter-dart as default Dart VM) (https://dart.dev/get-dart)
 
 #### Build the project:
-  - Run **flutter pub get**
-  - Run **flutter pub run build_runner build --delete-conflicting-outputs**
- -  the project is buildable now!
+  - Run: **flutter pub get**
+  - Run: **flutter pub run build_runner build --delete-conflicting-outputs**
+ -  The project is buildable now!
 
 
 ## Development Guide:
