@@ -10,19 +10,20 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
 );
 
 //need to put icon into drawable on Android
-const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('ic_launcher');
+const AndroidInitializationSettings initializationSettingsAndroid =
+    AndroidInitializationSettings('ic_launcher');
 
-const InitializationSettings initializationSettings = InitializationSettings(
-    android: initializationSettingsAndroid);
+const InitializationSettings initializationSettings =
+    InitializationSettings(android: initializationSettingsAndroid);
 
 class PushNotificationsController {
   UserRepository repo = Get.find<UserRepository>();
 
   void init() async {
     FirebaseMessaging.instance.getToken().then((token) async {
-      print("FirebaseMessaging getToken $token ");
+      print("FirebaseMessaging token: $token");
       if (token != null && token.isNotEmpty) {
-       // await repo.sendFirebaseToken(token);
+        // await repo.sendFirebaseToken(token);
       }
     });
     FirebaseMessaging.instance.onTokenRefresh.listen((token) async {
@@ -31,24 +32,30 @@ class PushNotificationsController {
       }
     });
 
-    await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+    await FirebaseMessaging.instance
+        .setForegroundNotificationPresentationOptions(
       alert: true, // Required to display a heads up notification
       badge: true,
       sound: true,
     );
 
+    FirebaseMessaging.onMessage.listen((message) {
+      processIncomingPush(message);
+    });
+
     initLocalNotifications();
   }
 
   void initLocalNotifications() async {
-    final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+        FlutterLocalNotificationsPlugin();
 
     await flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
         ?.createNotificationChannel(channel);
 
     await flutterLocalNotificationsPlugin.initialize(initializationSettings);
-
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
@@ -73,5 +80,13 @@ class PushNotificationsController {
             ));
       }
     });
+  }
+
+  void processIncomingPush(RemoteMessage message) {
+    var id = message.data["GiverPublicCodeID"];
+    if (id != null) {
+      var repo = Get.find<UserRepository>();
+      repo.syncTickedLimitedData(id);
+    }
   }
 }

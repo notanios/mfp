@@ -130,3 +130,46 @@ Map<String, dynamic> _$$_CompleteProfileBodyToJson(
       'IsActive': instance.isActive,
       'PushNotificationToken': instance.pushToken,
     };
+
+_$_Ticket _$$_TicketFromJson(Map<String, dynamic> json) => _$_Ticket(
+      giverPublicCodeID: json['giverPublicCodeID'] as String?,
+      contactPerson: json['contactPerson'] as String?,
+      contactPhoneNumber: json['contactPhoneNumber'] as String?,
+      males: json['males'] as int?,
+      females: json['females'] as int?,
+      children: json['children'] as int?,
+      animals: json['animals'] as int?,
+      haveTransport: json['haveTransport'] as bool?,
+      helpType: json['helpType'] as int?,
+      askingText: json['askingText'] as String?,
+    );
+
+Map<String, dynamic> _$$_TicketToJson(_$_Ticket instance) => <String, dynamic>{
+      'giverPublicCodeID': instance.giverPublicCodeID,
+      'contactPerson': instance.contactPerson,
+      'contactPhoneNumber': instance.contactPhoneNumber,
+      'males': instance.males,
+      'females': instance.females,
+      'children': instance.children,
+      'animals': instance.animals,
+      'haveTransport': instance.haveTransport,
+      'helpType': instance.helpType,
+      'askingText': instance.askingText,
+    };
+
+_$_TicketRequestBody _$$_TicketRequestBodyFromJson(Map<String, dynamic> json) =>
+    _$_TicketRequestBody(
+      token: json['ApiToken'] as String?,
+      phoneNumber: json['PhoneNumber'] as String?,
+      password: json['Password'] as String?,
+      giverPublicCodeID: json['GiverPublicCodeID'] as String?,
+    );
+
+Map<String, dynamic> _$$_TicketRequestBodyToJson(
+        _$_TicketRequestBody instance) =>
+    <String, dynamic>{
+      'ApiToken': instance.token,
+      'PhoneNumber': instance.phoneNumber,
+      'Password': instance.password,
+      'GiverPublicCodeID': instance.giverPublicCodeID,
+    };

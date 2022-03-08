@@ -13,3 +13,5 @@ part 'api/register_body.dart';
 part 'api/activation_response.dart';
 part 'api/activation_body.dart';
 part 'api/complete_profile_body.dart';
+part 'api/ticket.dart';
+part 'api/ticket_request_body.dart';

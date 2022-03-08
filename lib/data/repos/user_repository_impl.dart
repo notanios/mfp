@@ -3,14 +3,15 @@ import 'package:get_storage/get_storage.dart';
 import 'package:mdf/data/constants/env_constants.dart';
 import 'package:mdf/data/models/index.dart';
 import 'package:mdf/data/storage/storage_extentions.dart';
+import 'package:mdf/data/storage/tickets_storage.dart';
 
 import '../api/distrincts_data_source.dart';
 import '../api/user_api_data_source.dart';
 import '../models/failure/failure.dart';
 
 abstract class UserRepository {
-  Future<Either<Failure, dynamic>> login(
-      String firstName, String lastName, String email, String phoneNumber);
+  Future<Either<Failure, dynamic>> login(String firstName, String lastName,
+      String email, String phoneNumber);
 
   Future<Either<Failure, List<Distrinct>>> getDistricts();
 
@@ -18,23 +19,27 @@ abstract class UserRepository {
 
   Future<Either<Failure, List<HelpNotification>>> getNotifications();
 
-  Future<Either<Failure, ActivationResponse>> confirmCode(
-      String code, String phoneNumber);
+  Future<Either<Failure, ActivationResponse>> confirmCode(String code,
+      String phoneNumber);
 
   Future<Either<Failure, dynamic>> updateProfile();
 
   Future<Either<Failure, dynamic>> logout();
 
-  Future<Either<Failure, dynamic>> completeProfile(
-      List<String> locations, List<String> services, String details);
+  Future<Either<Failure, dynamic>> completeProfile(List<String> locations,
+      List<String> services, String details);
+
+  Future<Either<Failure, dynamic>> syncTickedLimitedData(String id);
 }
 
 class UserRepositoryImpl extends UserRepository {
   final UserApiDataSource userApiDataSource;
   final DistrictsDataSource districtsDataSource;
+  final TicketsStorage ticketsStorage;
 
-  UserRepositoryImpl(
-      {required this.userApiDataSource, required this.districtsDataSource});
+  UserRepositoryImpl({required this.userApiDataSource,
+    required this.districtsDataSource,
+    required this.ticketsStorage});
 
   @override
   Future<Either<Failure, dynamic>> login(String firstName, String lastName,
@@ -85,8 +90,8 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   @override
-  Future<Either<Failure, ActivationResponse>> confirmCode(
-      String code, String phoneNumber) async {
+  Future<Either<Failure, ActivationResponse>> confirmCode(String code,
+      String phoneNumber) async {
     try {
       var body = ActivationBody(
           token: EnvConstants.token,
@@ -120,8 +125,8 @@ class UserRepositoryImpl extends UserRepository {
   }
 
   @override
-  Future<Either<Failure, dynamic>> completeProfile(
-      List<String> locations, List<String> services, String details) async {
+  Future<Either<Failure, dynamic>> completeProfile(List<String> locations,
+      List<String> services, String details) async {
     GetStorage box = GetStorage();
     var phoneNumber = box.getPhoneNumber();
     var password = box.getPassword();
@@ -142,8 +147,26 @@ class UserRepositoryImpl extends UserRepository {
       box.putServices(services);
       box.putLocations(locations);
       box.putDetails(details);
+      box.putIsAvailable(true);
 
       return Right(result);
+    } catch (e) {
+      return Left(ServerFailure(errorObject: e));
+    }
+  }
+
+  @override
+  Future<Either<Failure, dynamic>> syncTickedLimitedData(String id) async {
+    try {
+      GetStorage box = GetStorage();
+      TicketRequestBody body = TicketRequestBody(token: EnvConstants.token,
+          password: box.getPassword(),
+          phoneNumber: box.getPhoneNumber(),
+          giverPublicCodeID: id);
+
+      var response = await userApiDataSource.getLimitedTicketData(body);
+      ticketsStorage.addTicket(response);
+      return Right(response);
     } catch (e) {
       return Left(ServerFailure(errorObject: e));
     }

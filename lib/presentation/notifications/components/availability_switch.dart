@@ -5,6 +5,10 @@ import 'package:mdf/presentation/styles/strings.dart';
 import 'package:mdf/presentation/styles/text_styles.dart';
 
 class AvailabilitySwitch extends StatefulWidget {
+  bool isChecked = false;
+  AvailabilitySwitch(this.isChecked);
+
+
   @override
   State<StatefulWidget> createState() {
     return AvailabilitySwitchState();
@@ -12,13 +16,11 @@ class AvailabilitySwitch extends StatefulWidget {
 }
 
 class AvailabilitySwitchState extends State<AvailabilitySwitch> {
-  bool isChecked = false;
-
   @override
   Widget build(BuildContext context) {
     String availability;
     Color statusColor;
-    if (isChecked) {
+    if (widget.isChecked) {
       availability = Strings.available;
       statusColor = AppColors.primaryBlue;
     } else {
@@ -47,14 +49,14 @@ class AvailabilitySwitchState extends State<AvailabilitySwitch> {
           width: 40.0,
           height: 20.0,
           toggleSize: 20.0,
-          value: isChecked,
+          value: widget.isChecked,
           borderRadius: 30.0,
           activeColor: AppColors.primaryBlue,
           padding: 2.0,
           showOnOff: false,
           onToggle: (val) {
             setState(() {
-              isChecked = val;
+              widget.isChecked = val;
             });
           },
         )

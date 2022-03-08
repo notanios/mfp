@@ -14,6 +14,8 @@ abstract class UserApiDataSource {
   Future<dynamic> updateProfile(CompleteProfileBody body);
 
   Future<dynamic> logout();
+
+  Future<Ticket> getLimitedTicketData(TicketRequestBody body);
 }
 
 class UserApiDataSourceImpl implements UserApiDataSource {
@@ -63,5 +65,10 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   @override
   Future logout() {
     return _userApiService.logout();
+  }
+
+  @override
+  Future<Ticket> getLimitedTicketData(TicketRequestBody body) {
+    return _userApiService.getLimitedTickedData(body);
   }
 }

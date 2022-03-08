@@ -28,4 +28,7 @@ abstract class UserApiService {
 
   @POST("/logout")
   Future logout();
+
+  @POST("/Info")
+  Future<Ticket> getLimitedTickedData(@Body()TicketRequestBody body);
 }

@@ -1,4 +1,7 @@
+import 'dart:collection';
+
 import 'package:get_storage/get_storage.dart';
+import 'package:mdf/data/models/index.dart';
 
 extension GetStorageExtentions on GetStorage {
   static const FIRST_NAME_KEY = "first_name";
@@ -10,6 +13,8 @@ extension GetStorageExtentions on GetStorage {
   static const DETAILS = "details";
   static const SERVICES = "services";
   static const LOCATIONS = "locations";
+  static const IS_AVAILABLE = "is_available";
+  static const TICKETS = "tickets";
 
   void putFirstName(String value) async {
     await write(FIRST_NAME_KEY, value);
@@ -81,6 +86,23 @@ extension GetStorageExtentions on GetStorage {
 
   List<String> getServices() {
     return read(SERVICES);
+  }
+
+  void putIsAvailable(bool isAvailable){
+    write(IS_AVAILABLE, isAvailable);
+  }
+
+  bool getIsAvailable(){
+    return read(IS_AVAILABLE);
+  }
+
+  void putTickets(Map<String, Ticket> tickets){
+    write(TICKETS, tickets);
+  }
+
+  Map<String, Ticket>? getTickets(){
+    print("storage getTickets ${read(TICKETS)}");
+    return read(TICKETS);
   }
 }
 

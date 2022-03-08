@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:mdf/data/models/failure/failure.dart';
 import 'package:mdf/data/models/index.dart';
+import 'package:mdf/data/storage/storage_extentions.dart';
+import 'package:mdf/data/storage/tickets_storage.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../data/repos/user_repository_impl.dart';
@@ -12,23 +15,34 @@ class NotificationsController extends GetxController with StateMixin<String> {
   NotificationsController(this.userRepository);
 
   var isLoading = false.obs;
-  var error = "".obs;
-  var notifications = <HelpNotification>[].obs;
+  var isAvailableStatus = false.obs;
 
+  var error = "".obs;
+  var notifications = <Ticket>[].obs;
+
+  GetStorage box = GetStorage();
+  TicketsStorage ticketsStorage = Get.find<TicketsStorage>();
   RefreshController refreshController = RefreshController();
 
   @override
   void onInit() {
     super.onInit();
     _initPushNotifications();
-    getNotifications(false);
+    //getNotifications(false);
+    print("onInit tickets: ${ticketsStorage.getTickets()}");
+    notifications.value = (ticketsStorage.getTickets())?.values.toList() ?? [];
+
+    isAvailableStatus.value = box.getIsAvailable();
+    ticketsStorage.box.listen(() {
+        notifications.value = (ticketsStorage.getTickets()?.values.toList() ?? []);
+    });
   }
 
   void _initPushNotifications() {
     PushNotificationsController().init();
   }
 
-  void getNotifications(bool showLoading) async {
+  /*void getNotifications(bool showLoading) async {
     isLoading.value = showLoading;
     var response = await userRepository.getNotifications();
     response.fold((l) {
@@ -43,5 +57,5 @@ class NotificationsController extends GetxController with StateMixin<String> {
       notifications.value = r;
       error.value = "";
     });
-  }
+  }*/
 }

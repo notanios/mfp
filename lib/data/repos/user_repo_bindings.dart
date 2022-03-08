@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:mdf/data/repos/user_repository_impl.dart';
+import 'package:mdf/data/storage/tickets_storage.dart';
 
 import '../api/distrincts_data_source.dart';
 import '../api/errors/error_interceptor.dart';
@@ -33,9 +34,14 @@ class UserRepoBindings extends Bindings {
 
   @override
   void dependencies() {
-    Get.lazyPut<UserApiDataSource>(() => UserApiDataSourceImpl(dioClient: apiClient()));
+    Get.lazyPut<UserApiDataSource>(
+        () => UserApiDataSourceImpl(dioClient: apiClient()));
     Get.lazyPut<DistrictsDataSource>(() => DistrictsDataSourceImpl());
+    Get.lazyPut<TicketsStorage>(() => TicketsStorage());
 
-    Get.lazyPut<UserRepository>(() => UserRepositoryImpl(userApiDataSource: Get.find<UserApiDataSource>(), districtsDataSource: Get.find<DistrictsDataSource>()));
+    Get.lazyPut<UserRepository>(() => UserRepositoryImpl(
+        userApiDataSource: Get.find<UserApiDataSource>(),
+        districtsDataSource: Get.find<DistrictsDataSource>(),
+        ticketsStorage: Get.find<TicketsStorage>()));
   }
 }

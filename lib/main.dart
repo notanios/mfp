@@ -9,9 +9,20 @@ import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/push_notifications_controller.dart';
 import 'package:mdf/routes/app_pages.dart';
 
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  print("Handling a background message: ${message.messageId}");
+  print("Handling a background data: ${message.data}");
+}
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  FirebaseMessaging.onBackgroundMessage((message) => _firebaseMessagingBackgroundHandler(message));
   await GetStorage.init();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then((_) async {
     runApp(const MyApp());

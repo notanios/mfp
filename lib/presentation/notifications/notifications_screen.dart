@@ -14,6 +14,7 @@ import '../base/base.dart';
 import '../base/snack_bar_widget.dart';
 import '../styles/text_styles.dart';
 import 'components/availability_switch.dart';
+import 'components/logo.dart';
 
 class NotificationsScreen extends GetView<NotificationsController> {
   const NotificationsScreen({Key? key}) : super(key: key);
@@ -25,11 +26,12 @@ class NotificationsScreen extends GetView<NotificationsController> {
           context,
           leftWidget: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
+            child: Logo(height: 35),
+            /*child: Text(
               "Salut Pavel",
               style: TextStyles.bold
                   .copyWith(fontSize: 25, color: AppColors.black),
-            ),
+            ),*/
           ),
           showBack: false,
           rightWidget: Padding(
@@ -96,7 +98,7 @@ class NotificationsScreen extends GetView<NotificationsController> {
                           ]),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 15),
-                      child: AvailabilitySwitch(),
+                      child: AvailabilitySwitch(controller.isAvailableStatus.value),
                     ),
                     Container(
                       height: 0.3,
@@ -114,7 +116,7 @@ class NotificationsScreen extends GetView<NotificationsController> {
                             enablePullUp: false,
                             controller: controller.refreshController,
                             onRefresh: () {
-                              controller.getNotifications(false);
+                            //  controller.getNotifications(false);
                             },
                             child: CustomScrollView(
                               scrollBehavior: NoOverscrollBehaviour(),

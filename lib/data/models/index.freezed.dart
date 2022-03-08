@@ -1698,3 +1698,630 @@ abstract class _CompleteProfileBody implements CompleteProfileBody {
   _$CompleteProfileBodyCopyWith<_CompleteProfileBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+Ticket _$TicketFromJson(Map<String, dynamic> json) {
+  return _Ticket.fromJson(json);
+}
+
+/// @nodoc
+class _$TicketTearOff {
+  const _$TicketTearOff();
+
+  _Ticket call(
+      {@JsonKey(name: 'giverPublicCodeID') String? giverPublicCodeID,
+      @JsonKey(name: 'contactPerson') String? contactPerson,
+      @JsonKey(name: 'contactPhoneNumber') String? contactPhoneNumber,
+      @JsonKey(name: 'males') int? males,
+      @JsonKey(name: 'females') int? females,
+      @JsonKey(name: 'children') int? children,
+      @JsonKey(name: 'animals') int? animals,
+      @JsonKey(name: 'haveTransport') bool? haveTransport,
+      @JsonKey(name: 'helpType') int? helpType,
+      @JsonKey(name: 'askingText') String? askingText}) {
+    return _Ticket(
+      giverPublicCodeID: giverPublicCodeID,
+      contactPerson: contactPerson,
+      contactPhoneNumber: contactPhoneNumber,
+      males: males,
+      females: females,
+      children: children,
+      animals: animals,
+      haveTransport: haveTransport,
+      helpType: helpType,
+      askingText: askingText,
+    );
+  }
+
+  Ticket fromJson(Map<String, Object?> json) {
+    return Ticket.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Ticket = _$TicketTearOff();
+
+/// @nodoc
+mixin _$Ticket {
+  @JsonKey(name: 'giverPublicCodeID')
+  String? get giverPublicCodeID => throw _privateConstructorUsedError;
+  @JsonKey(name: 'contactPerson')
+  String? get contactPerson => throw _privateConstructorUsedError;
+  @JsonKey(name: 'contactPhoneNumber')
+  String? get contactPhoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'males')
+  int? get males => throw _privateConstructorUsedError;
+  @JsonKey(name: 'females')
+  int? get females => throw _privateConstructorUsedError;
+  @JsonKey(name: 'children')
+  int? get children => throw _privateConstructorUsedError;
+  @JsonKey(name: 'animals')
+  int? get animals => throw _privateConstructorUsedError;
+  @JsonKey(name: 'haveTransport')
+  bool? get haveTransport => throw _privateConstructorUsedError;
+  @JsonKey(name: 'helpType')
+  int? get helpType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'askingText')
+  String? get askingText => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TicketCopyWith<Ticket> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TicketCopyWith<$Res> {
+  factory $TicketCopyWith(Ticket value, $Res Function(Ticket) then) =
+      _$TicketCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'giverPublicCodeID') String? giverPublicCodeID,
+      @JsonKey(name: 'contactPerson') String? contactPerson,
+      @JsonKey(name: 'contactPhoneNumber') String? contactPhoneNumber,
+      @JsonKey(name: 'males') int? males,
+      @JsonKey(name: 'females') int? females,
+      @JsonKey(name: 'children') int? children,
+      @JsonKey(name: 'animals') int? animals,
+      @JsonKey(name: 'haveTransport') bool? haveTransport,
+      @JsonKey(name: 'helpType') int? helpType,
+      @JsonKey(name: 'askingText') String? askingText});
+}
+
+/// @nodoc
+class _$TicketCopyWithImpl<$Res> implements $TicketCopyWith<$Res> {
+  _$TicketCopyWithImpl(this._value, this._then);
+
+  final Ticket _value;
+  // ignore: unused_field
+  final $Res Function(Ticket) _then;
+
+  @override
+  $Res call({
+    Object? giverPublicCodeID = freezed,
+    Object? contactPerson = freezed,
+    Object? contactPhoneNumber = freezed,
+    Object? males = freezed,
+    Object? females = freezed,
+    Object? children = freezed,
+    Object? animals = freezed,
+    Object? haveTransport = freezed,
+    Object? helpType = freezed,
+    Object? askingText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      giverPublicCodeID: giverPublicCodeID == freezed
+          ? _value.giverPublicCodeID
+          : giverPublicCodeID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: contactPerson == freezed
+          ? _value.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhoneNumber: contactPhoneNumber == freezed
+          ? _value.contactPhoneNumber
+          : contactPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      males: males == freezed
+          ? _value.males
+          : males // ignore: cast_nullable_to_non_nullable
+              as int?,
+      females: females == freezed
+          ? _value.females
+          : females // ignore: cast_nullable_to_non_nullable
+              as int?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as int?,
+      animals: animals == freezed
+          ? _value.animals
+          : animals // ignore: cast_nullable_to_non_nullable
+              as int?,
+      haveTransport: haveTransport == freezed
+          ? _value.haveTransport
+          : haveTransport // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      helpType: helpType == freezed
+          ? _value.helpType
+          : helpType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      askingText: askingText == freezed
+          ? _value.askingText
+          : askingText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TicketCopyWith<$Res> implements $TicketCopyWith<$Res> {
+  factory _$TicketCopyWith(_Ticket value, $Res Function(_Ticket) then) =
+      __$TicketCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'giverPublicCodeID') String? giverPublicCodeID,
+      @JsonKey(name: 'contactPerson') String? contactPerson,
+      @JsonKey(name: 'contactPhoneNumber') String? contactPhoneNumber,
+      @JsonKey(name: 'males') int? males,
+      @JsonKey(name: 'females') int? females,
+      @JsonKey(name: 'children') int? children,
+      @JsonKey(name: 'animals') int? animals,
+      @JsonKey(name: 'haveTransport') bool? haveTransport,
+      @JsonKey(name: 'helpType') int? helpType,
+      @JsonKey(name: 'askingText') String? askingText});
+}
+
+/// @nodoc
+class __$TicketCopyWithImpl<$Res> extends _$TicketCopyWithImpl<$Res>
+    implements _$TicketCopyWith<$Res> {
+  __$TicketCopyWithImpl(_Ticket _value, $Res Function(_Ticket) _then)
+      : super(_value, (v) => _then(v as _Ticket));
+
+  @override
+  _Ticket get _value => super._value as _Ticket;
+
+  @override
+  $Res call({
+    Object? giverPublicCodeID = freezed,
+    Object? contactPerson = freezed,
+    Object? contactPhoneNumber = freezed,
+    Object? males = freezed,
+    Object? females = freezed,
+    Object? children = freezed,
+    Object? animals = freezed,
+    Object? haveTransport = freezed,
+    Object? helpType = freezed,
+    Object? askingText = freezed,
+  }) {
+    return _then(_Ticket(
+      giverPublicCodeID: giverPublicCodeID == freezed
+          ? _value.giverPublicCodeID
+          : giverPublicCodeID // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPerson: contactPerson == freezed
+          ? _value.contactPerson
+          : contactPerson // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contactPhoneNumber: contactPhoneNumber == freezed
+          ? _value.contactPhoneNumber
+          : contactPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      males: males == freezed
+          ? _value.males
+          : males // ignore: cast_nullable_to_non_nullable
+              as int?,
+      females: females == freezed
+          ? _value.females
+          : females // ignore: cast_nullable_to_non_nullable
+              as int?,
+      children: children == freezed
+          ? _value.children
+          : children // ignore: cast_nullable_to_non_nullable
+              as int?,
+      animals: animals == freezed
+          ? _value.animals
+          : animals // ignore: cast_nullable_to_non_nullable
+              as int?,
+      haveTransport: haveTransport == freezed
+          ? _value.haveTransport
+          : haveTransport // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      helpType: helpType == freezed
+          ? _value.helpType
+          : helpType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      askingText: askingText == freezed
+          ? _value.askingText
+          : askingText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Ticket implements _Ticket {
+  _$_Ticket(
+      {@JsonKey(name: 'giverPublicCodeID') this.giverPublicCodeID,
+      @JsonKey(name: 'contactPerson') this.contactPerson,
+      @JsonKey(name: 'contactPhoneNumber') this.contactPhoneNumber,
+      @JsonKey(name: 'males') this.males,
+      @JsonKey(name: 'females') this.females,
+      @JsonKey(name: 'children') this.children,
+      @JsonKey(name: 'animals') this.animals,
+      @JsonKey(name: 'haveTransport') this.haveTransport,
+      @JsonKey(name: 'helpType') this.helpType,
+      @JsonKey(name: 'askingText') this.askingText});
+
+  factory _$_Ticket.fromJson(Map<String, dynamic> json) =>
+      _$$_TicketFromJson(json);
+
+  @override
+  @JsonKey(name: 'giverPublicCodeID')
+  final String? giverPublicCodeID;
+  @override
+  @JsonKey(name: 'contactPerson')
+  final String? contactPerson;
+  @override
+  @JsonKey(name: 'contactPhoneNumber')
+  final String? contactPhoneNumber;
+  @override
+  @JsonKey(name: 'males')
+  final int? males;
+  @override
+  @JsonKey(name: 'females')
+  final int? females;
+  @override
+  @JsonKey(name: 'children')
+  final int? children;
+  @override
+  @JsonKey(name: 'animals')
+  final int? animals;
+  @override
+  @JsonKey(name: 'haveTransport')
+  final bool? haveTransport;
+  @override
+  @JsonKey(name: 'helpType')
+  final int? helpType;
+  @override
+  @JsonKey(name: 'askingText')
+  final String? askingText;
+
+  @override
+  String toString() {
+    return 'Ticket(giverPublicCodeID: $giverPublicCodeID, contactPerson: $contactPerson, contactPhoneNumber: $contactPhoneNumber, males: $males, females: $females, children: $children, animals: $animals, haveTransport: $haveTransport, helpType: $helpType, askingText: $askingText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Ticket &&
+            const DeepCollectionEquality()
+                .equals(other.giverPublicCodeID, giverPublicCodeID) &&
+            const DeepCollectionEquality()
+                .equals(other.contactPerson, contactPerson) &&
+            const DeepCollectionEquality()
+                .equals(other.contactPhoneNumber, contactPhoneNumber) &&
+            const DeepCollectionEquality().equals(other.males, males) &&
+            const DeepCollectionEquality().equals(other.females, females) &&
+            const DeepCollectionEquality().equals(other.children, children) &&
+            const DeepCollectionEquality().equals(other.animals, animals) &&
+            const DeepCollectionEquality()
+                .equals(other.haveTransport, haveTransport) &&
+            const DeepCollectionEquality().equals(other.helpType, helpType) &&
+            const DeepCollectionEquality()
+                .equals(other.askingText, askingText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(giverPublicCodeID),
+      const DeepCollectionEquality().hash(contactPerson),
+      const DeepCollectionEquality().hash(contactPhoneNumber),
+      const DeepCollectionEquality().hash(males),
+      const DeepCollectionEquality().hash(females),
+      const DeepCollectionEquality().hash(children),
+      const DeepCollectionEquality().hash(animals),
+      const DeepCollectionEquality().hash(haveTransport),
+      const DeepCollectionEquality().hash(helpType),
+      const DeepCollectionEquality().hash(askingText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TicketCopyWith<_Ticket> get copyWith =>
+      __$TicketCopyWithImpl<_Ticket>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TicketToJson(this);
+  }
+}
+
+abstract class _Ticket implements Ticket {
+  factory _Ticket(
+      {@JsonKey(name: 'giverPublicCodeID') String? giverPublicCodeID,
+      @JsonKey(name: 'contactPerson') String? contactPerson,
+      @JsonKey(name: 'contactPhoneNumber') String? contactPhoneNumber,
+      @JsonKey(name: 'males') int? males,
+      @JsonKey(name: 'females') int? females,
+      @JsonKey(name: 'children') int? children,
+      @JsonKey(name: 'animals') int? animals,
+      @JsonKey(name: 'haveTransport') bool? haveTransport,
+      @JsonKey(name: 'helpType') int? helpType,
+      @JsonKey(name: 'askingText') String? askingText}) = _$_Ticket;
+
+  factory _Ticket.fromJson(Map<String, dynamic> json) = _$_Ticket.fromJson;
+
+  @override
+  @JsonKey(name: 'giverPublicCodeID')
+  String? get giverPublicCodeID;
+  @override
+  @JsonKey(name: 'contactPerson')
+  String? get contactPerson;
+  @override
+  @JsonKey(name: 'contactPhoneNumber')
+  String? get contactPhoneNumber;
+  @override
+  @JsonKey(name: 'males')
+  int? get males;
+  @override
+  @JsonKey(name: 'females')
+  int? get females;
+  @override
+  @JsonKey(name: 'children')
+  int? get children;
+  @override
+  @JsonKey(name: 'animals')
+  int? get animals;
+  @override
+  @JsonKey(name: 'haveTransport')
+  bool? get haveTransport;
+  @override
+  @JsonKey(name: 'helpType')
+  int? get helpType;
+  @override
+  @JsonKey(name: 'askingText')
+  String? get askingText;
+  @override
+  @JsonKey(ignore: true)
+  _$TicketCopyWith<_Ticket> get copyWith => throw _privateConstructorUsedError;
+}
+
+TicketRequestBody _$TicketRequestBodyFromJson(Map<String, dynamic> json) {
+  return _TicketRequestBody.fromJson(json);
+}
+
+/// @nodoc
+class _$TicketRequestBodyTearOff {
+  const _$TicketRequestBodyTearOff();
+
+  _TicketRequestBody call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'GiverPublicCodeID') String? giverPublicCodeID}) {
+    return _TicketRequestBody(
+      token: token,
+      phoneNumber: phoneNumber,
+      password: password,
+      giverPublicCodeID: giverPublicCodeID,
+    );
+  }
+
+  TicketRequestBody fromJson(Map<String, Object?> json) {
+    return TicketRequestBody.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $TicketRequestBody = _$TicketRequestBodyTearOff();
+
+/// @nodoc
+mixin _$TicketRequestBody {
+  @JsonKey(name: 'ApiToken')
+  String? get token => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Password')
+  String? get password => throw _privateConstructorUsedError;
+  @JsonKey(name: 'GiverPublicCodeID')
+  String? get giverPublicCodeID => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TicketRequestBodyCopyWith<TicketRequestBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TicketRequestBodyCopyWith<$Res> {
+  factory $TicketRequestBodyCopyWith(
+          TicketRequestBody value, $Res Function(TicketRequestBody) then) =
+      _$TicketRequestBodyCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'GiverPublicCodeID') String? giverPublicCodeID});
+}
+
+/// @nodoc
+class _$TicketRequestBodyCopyWithImpl<$Res>
+    implements $TicketRequestBodyCopyWith<$Res> {
+  _$TicketRequestBodyCopyWithImpl(this._value, this._then);
+
+  final TicketRequestBody _value;
+  // ignore: unused_field
+  final $Res Function(TicketRequestBody) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
+    Object? giverPublicCodeID = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      giverPublicCodeID: giverPublicCodeID == freezed
+          ? _value.giverPublicCodeID
+          : giverPublicCodeID // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$TicketRequestBodyCopyWith<$Res>
+    implements $TicketRequestBodyCopyWith<$Res> {
+  factory _$TicketRequestBodyCopyWith(
+          _TicketRequestBody value, $Res Function(_TicketRequestBody) then) =
+      __$TicketRequestBodyCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'GiverPublicCodeID') String? giverPublicCodeID});
+}
+
+/// @nodoc
+class __$TicketRequestBodyCopyWithImpl<$Res>
+    extends _$TicketRequestBodyCopyWithImpl<$Res>
+    implements _$TicketRequestBodyCopyWith<$Res> {
+  __$TicketRequestBodyCopyWithImpl(
+      _TicketRequestBody _value, $Res Function(_TicketRequestBody) _then)
+      : super(_value, (v) => _then(v as _TicketRequestBody));
+
+  @override
+  _TicketRequestBody get _value => super._value as _TicketRequestBody;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
+    Object? giverPublicCodeID = freezed,
+  }) {
+    return _then(_TicketRequestBody(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      giverPublicCodeID: giverPublicCodeID == freezed
+          ? _value.giverPublicCodeID
+          : giverPublicCodeID // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_TicketRequestBody implements _TicketRequestBody {
+  _$_TicketRequestBody(
+      {@JsonKey(name: 'ApiToken') this.token,
+      @JsonKey(name: 'PhoneNumber') this.phoneNumber,
+      @JsonKey(name: 'Password') this.password,
+      @JsonKey(name: 'GiverPublicCodeID') this.giverPublicCodeID});
+
+  factory _$_TicketRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$$_TicketRequestBodyFromJson(json);
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  final String? token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  final String? phoneNumber;
+  @override
+  @JsonKey(name: 'Password')
+  final String? password;
+  @override
+  @JsonKey(name: 'GiverPublicCodeID')
+  final String? giverPublicCodeID;
+
+  @override
+  String toString() {
+    return 'TicketRequestBody(token: $token, phoneNumber: $phoneNumber, password: $password, giverPublicCodeID: $giverPublicCodeID)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TicketRequestBody &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.giverPublicCodeID, giverPublicCodeID));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(giverPublicCodeID));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TicketRequestBodyCopyWith<_TicketRequestBody> get copyWith =>
+      __$TicketRequestBodyCopyWithImpl<_TicketRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TicketRequestBodyToJson(this);
+  }
+}
+
+abstract class _TicketRequestBody implements TicketRequestBody {
+  factory _TicketRequestBody(
+          {@JsonKey(name: 'ApiToken') String? token,
+          @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+          @JsonKey(name: 'Password') String? password,
+          @JsonKey(name: 'GiverPublicCodeID') String? giverPublicCodeID}) =
+      _$_TicketRequestBody;
+
+  factory _TicketRequestBody.fromJson(Map<String, dynamic> json) =
+      _$_TicketRequestBody.fromJson;
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  String? get token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber;
+  @override
+  @JsonKey(name: 'Password')
+  String? get password;
+  @override
+  @JsonKey(name: 'GiverPublicCodeID')
+  String? get giverPublicCodeID;
+  @override
+  @JsonKey(ignore: true)
+  _$TicketRequestBodyCopyWith<_TicketRequestBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -7,7 +7,7 @@ import '../../styles/strings.dart';
 import 'notification_button.dart';
 
 class NotificationCard extends StatelessWidget {
-  HelpNotification notification;
+  Ticket notification;
 
   NotificationCard({Key? key, required this.notification}) : super(key: key);
 
@@ -28,7 +28,7 @@ class NotificationCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      notification.type ?? "",
+                      notification.giverPublicCodeID ?? "",
                       style: TextStyles.bold
                           .copyWith(color: AppColors.black, fontSize: 18),
                     ),
@@ -48,7 +48,7 @@ class NotificationCard extends StatelessWidget {
                                 .copyWith(fontSize: 14, color: AppColors.black),
                             children: <TextSpan>[
                               TextSpan(
-                                  text: notification.status ?? "",
+                                  text: notification.haveTransport.toString() ?? "",
                                   style: TextStyles.bold
                                       .copyWith(fontSize: 14, color: AppColors.primaryBlue)),
                             ]),
@@ -60,7 +60,7 @@ class NotificationCard extends StatelessWidget {
                   height: 8,
                 ),
                 Text(
-                  notification.descriptions ?? "",
+                  notification.askingText ?? "",
                   style: TextStyles.regular
                       .copyWith(color: AppColors.black, fontSize: 14),
                 ),
