@@ -39,5 +39,7 @@ class Strings {
  static const String ignore = "Ignoră";
  static const String verify = "Verifiсă";
  static const String verifing = "Se verifiсă...";
+ static const String complete_profile = "Completează profilul";
+ static const String details = "Detalii:";
 
 }

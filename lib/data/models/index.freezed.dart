@@ -1355,3 +1355,346 @@ abstract class _ActivationBody implements ActivationBody {
   _$ActivationBodyCopyWith<_ActivationBody> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+CompleteProfileBody _$CompleteProfileBodyFromJson(Map<String, dynamic> json) {
+  return _CompleteProfileBody.fromJson(json);
+}
+
+/// @nodoc
+class _$CompleteProfileBodyTearOff {
+  const _$CompleteProfileBodyTearOff();
+
+  _CompleteProfileBody call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'Locations') List<String>? locations,
+      @JsonKey(name: 'Services') List<String>? services,
+      @JsonKey(name: 'Details') String? details,
+      @JsonKey(name: 'IsActive') bool? isActive,
+      @JsonKey(name: 'PushNotificationToken') String? pushToken}) {
+    return _CompleteProfileBody(
+      token: token,
+      phoneNumber: phoneNumber,
+      password: password,
+      locations: locations,
+      services: services,
+      details: details,
+      isActive: isActive,
+      pushToken: pushToken,
+    );
+  }
+
+  CompleteProfileBody fromJson(Map<String, Object?> json) {
+    return CompleteProfileBody.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $CompleteProfileBody = _$CompleteProfileBodyTearOff();
+
+/// @nodoc
+mixin _$CompleteProfileBody {
+  @JsonKey(name: 'ApiToken')
+  String? get token => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Password')
+  String? get password => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Locations')
+  List<String>? get locations => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Services')
+  List<String>? get services => throw _privateConstructorUsedError;
+  @JsonKey(name: 'Details')
+  String? get details => throw _privateConstructorUsedError;
+  @JsonKey(name: 'IsActive')
+  bool? get isActive => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PushNotificationToken')
+  String? get pushToken => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CompleteProfileBodyCopyWith<CompleteProfileBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CompleteProfileBodyCopyWith<$Res> {
+  factory $CompleteProfileBodyCopyWith(
+          CompleteProfileBody value, $Res Function(CompleteProfileBody) then) =
+      _$CompleteProfileBodyCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'Locations') List<String>? locations,
+      @JsonKey(name: 'Services') List<String>? services,
+      @JsonKey(name: 'Details') String? details,
+      @JsonKey(name: 'IsActive') bool? isActive,
+      @JsonKey(name: 'PushNotificationToken') String? pushToken});
+}
+
+/// @nodoc
+class _$CompleteProfileBodyCopyWithImpl<$Res>
+    implements $CompleteProfileBodyCopyWith<$Res> {
+  _$CompleteProfileBodyCopyWithImpl(this._value, this._then);
+
+  final CompleteProfileBody _value;
+  // ignore: unused_field
+  final $Res Function(CompleteProfileBody) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
+    Object? locations = freezed,
+    Object? services = freezed,
+    Object? details = freezed,
+    Object? isActive = freezed,
+    Object? pushToken = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locations: locations == freezed
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      services: services == freezed
+          ? _value.services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      details: details == freezed
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      pushToken: pushToken == freezed
+          ? _value.pushToken
+          : pushToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$CompleteProfileBodyCopyWith<$Res>
+    implements $CompleteProfileBodyCopyWith<$Res> {
+  factory _$CompleteProfileBodyCopyWith(_CompleteProfileBody value,
+          $Res Function(_CompleteProfileBody) then) =
+      __$CompleteProfileBodyCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'Password') String? password,
+      @JsonKey(name: 'Locations') List<String>? locations,
+      @JsonKey(name: 'Services') List<String>? services,
+      @JsonKey(name: 'Details') String? details,
+      @JsonKey(name: 'IsActive') bool? isActive,
+      @JsonKey(name: 'PushNotificationToken') String? pushToken});
+}
+
+/// @nodoc
+class __$CompleteProfileBodyCopyWithImpl<$Res>
+    extends _$CompleteProfileBodyCopyWithImpl<$Res>
+    implements _$CompleteProfileBodyCopyWith<$Res> {
+  __$CompleteProfileBodyCopyWithImpl(
+      _CompleteProfileBody _value, $Res Function(_CompleteProfileBody) _then)
+      : super(_value, (v) => _then(v as _CompleteProfileBody));
+
+  @override
+  _CompleteProfileBody get _value => super._value as _CompleteProfileBody;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? password = freezed,
+    Object? locations = freezed,
+    Object? services = freezed,
+    Object? details = freezed,
+    Object? isActive = freezed,
+    Object? pushToken = freezed,
+  }) {
+    return _then(_CompleteProfileBody(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+      locations: locations == freezed
+          ? _value.locations
+          : locations // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      services: services == freezed
+          ? _value.services
+          : services // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      details: details == freezed
+          ? _value.details
+          : details // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      pushToken: pushToken == freezed
+          ? _value.pushToken
+          : pushToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_CompleteProfileBody implements _CompleteProfileBody {
+  _$_CompleteProfileBody(
+      {@JsonKey(name: 'ApiToken') this.token,
+      @JsonKey(name: 'PhoneNumber') this.phoneNumber,
+      @JsonKey(name: 'Password') this.password,
+      @JsonKey(name: 'Locations') this.locations,
+      @JsonKey(name: 'Services') this.services,
+      @JsonKey(name: 'Details') this.details,
+      @JsonKey(name: 'IsActive') this.isActive,
+      @JsonKey(name: 'PushNotificationToken') this.pushToken});
+
+  factory _$_CompleteProfileBody.fromJson(Map<String, dynamic> json) =>
+      _$$_CompleteProfileBodyFromJson(json);
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  final String? token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  final String? phoneNumber;
+  @override
+  @JsonKey(name: 'Password')
+  final String? password;
+  @override
+  @JsonKey(name: 'Locations')
+  final List<String>? locations;
+  @override
+  @JsonKey(name: 'Services')
+  final List<String>? services;
+  @override
+  @JsonKey(name: 'Details')
+  final String? details;
+  @override
+  @JsonKey(name: 'IsActive')
+  final bool? isActive;
+  @override
+  @JsonKey(name: 'PushNotificationToken')
+  final String? pushToken;
+
+  @override
+  String toString() {
+    return 'CompleteProfileBody(token: $token, phoneNumber: $phoneNumber, password: $password, locations: $locations, services: $services, details: $details, isActive: $isActive, pushToken: $pushToken)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CompleteProfileBody &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality().equals(other.locations, locations) &&
+            const DeepCollectionEquality().equals(other.services, services) &&
+            const DeepCollectionEquality().equals(other.details, details) &&
+            const DeepCollectionEquality().equals(other.isActive, isActive) &&
+            const DeepCollectionEquality().equals(other.pushToken, pushToken));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(locations),
+      const DeepCollectionEquality().hash(services),
+      const DeepCollectionEquality().hash(details),
+      const DeepCollectionEquality().hash(isActive),
+      const DeepCollectionEquality().hash(pushToken));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CompleteProfileBodyCopyWith<_CompleteProfileBody> get copyWith =>
+      __$CompleteProfileBodyCopyWithImpl<_CompleteProfileBody>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CompleteProfileBodyToJson(this);
+  }
+}
+
+abstract class _CompleteProfileBody implements CompleteProfileBody {
+  factory _CompleteProfileBody(
+          {@JsonKey(name: 'ApiToken') String? token,
+          @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+          @JsonKey(name: 'Password') String? password,
+          @JsonKey(name: 'Locations') List<String>? locations,
+          @JsonKey(name: 'Services') List<String>? services,
+          @JsonKey(name: 'Details') String? details,
+          @JsonKey(name: 'IsActive') bool? isActive,
+          @JsonKey(name: 'PushNotificationToken') String? pushToken}) =
+      _$_CompleteProfileBody;
+
+  factory _CompleteProfileBody.fromJson(Map<String, dynamic> json) =
+      _$_CompleteProfileBody.fromJson;
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  String? get token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber;
+  @override
+  @JsonKey(name: 'Password')
+  String? get password;
+  @override
+  @JsonKey(name: 'Locations')
+  List<String>? get locations;
+  @override
+  @JsonKey(name: 'Services')
+  List<String>? get services;
+  @override
+  @JsonKey(name: 'Details')
+  String? get details;
+  @override
+  @JsonKey(name: 'IsActive')
+  bool? get isActive;
+  @override
+  @JsonKey(name: 'PushNotificationToken')
+  String? get pushToken;
+  @override
+  @JsonKey(ignore: true)
+  _$CompleteProfileBodyCopyWith<_CompleteProfileBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}

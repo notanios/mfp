@@ -9,12 +9,47 @@ class CheckboxGroup extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _CheckboxGroupState();
+    return CheckboxGroupState();
   }
 }
 
-class _CheckboxGroupState extends State<CheckboxGroup> {
+class CheckboxGroupState extends State<CheckboxGroup> {
   bool isChecked = false;
+
+  final consiliereKey = GlobalKey<CheckBoxComponentState>();
+  final juridicKey = GlobalKey<CheckBoxComponentState>();
+  final traduceriKey = GlobalKey<CheckBoxComponentState>();
+  final medicKey = GlobalKey<CheckBoxComponentState>();
+  final consulareKey = GlobalKey<CheckBoxComponentState>();
+  final alteleKey = GlobalKey<CheckBoxComponentState>();
+
+  List<String> getCheckedServicesLabels() {
+    List<String> labels = [];
+    if (consiliereKey.currentState?.isChecked == true) {
+      labels.add(Strings.consiliere);
+    }
+
+    if (juridicKey.currentState?.isChecked == true) {
+      labels.add(Strings.juridic);
+    }
+
+    if (traduceriKey.currentState?.isChecked == true) {
+      labels.add(Strings.traduceri);
+    }
+
+    if (medicKey.currentState?.isChecked == true) {
+      labels.add(Strings.medic);
+    }
+
+    if (consulareKey.currentState?.isChecked == true) {
+      labels.add(Strings.consulare);
+    }
+
+    if (alteleKey.currentState?.isChecked == true) {
+      labels.add(Strings.altele);
+    }
+    return labels;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +75,25 @@ class _CheckboxGroupState extends State<CheckboxGroup> {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
-        color: AppColors.santasGray,
-        width: 1,
-      ), borderRadius: BorderRadius.circular(8)),
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+            color: AppColors.santasGray,
+            width: 1,
+          ),
+          borderRadius: BorderRadius.circular(8)),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
       child: Column(
         children: [
           Row(
             children: [
-              Expanded(child: CheckboxComponent(label: Strings.consiliere)),
-              Expanded(child: CheckboxComponent(label: Strings.juridic))
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.consiliere,
+                key: consiliereKey,
+              )),
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.juridic,
+                key: juridicKey,
+              ))
             ],
           ),
           const SizedBox(
@@ -57,8 +101,16 @@ class _CheckboxGroupState extends State<CheckboxGroup> {
           ),
           Row(
             children: [
-              Expanded(child: CheckboxComponent(label: Strings.traduceri)),
-              Expanded(child: CheckboxComponent(label: Strings.medic))
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.traduceri,
+                key: traduceriKey,
+              )),
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.medic,
+                key: medicKey,
+              ))
             ],
           ),
           const SizedBox(
@@ -66,8 +118,16 @@ class _CheckboxGroupState extends State<CheckboxGroup> {
           ),
           Row(
             children: [
-              Expanded(child: CheckboxComponent(label: Strings.consulare)),
-              Expanded(child: CheckboxComponent(label: Strings.altele))
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.consulare,
+                key: consulareKey,
+              )),
+              Expanded(
+                  child: CheckboxComponent(
+                label: Strings.altele,
+                key: alteleKey,
+              ))
             ],
           )
         ],

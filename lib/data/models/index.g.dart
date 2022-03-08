@@ -100,3 +100,33 @@ Map<String, dynamic> _$$_ActivationBodyToJson(_$_ActivationBody instance) =>
       'PhoneNumber': instance.phoneNumber,
       'ActivationCode': instance.activationCode,
     };
+
+_$_CompleteProfileBody _$$_CompleteProfileBodyFromJson(
+        Map<String, dynamic> json) =>
+    _$_CompleteProfileBody(
+      token: json['ApiToken'] as String?,
+      phoneNumber: json['PhoneNumber'] as String?,
+      password: json['Password'] as String?,
+      locations: (json['Locations'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      services: (json['Services'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      details: json['Details'] as String?,
+      isActive: json['IsActive'] as bool?,
+      pushToken: json['PushNotificationToken'] as String?,
+    );
+
+Map<String, dynamic> _$$_CompleteProfileBodyToJson(
+        _$_CompleteProfileBody instance) =>
+    <String, dynamic>{
+      'ApiToken': instance.token,
+      'PhoneNumber': instance.phoneNumber,
+      'Password': instance.password,
+      'Locations': instance.locations,
+      'Services': instance.services,
+      'Details': instance.details,
+      'IsActive': instance.isActive,
+      'PushNotificationToken': instance.pushToken,
+    };

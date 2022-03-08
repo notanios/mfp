@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:mdf/data/models/failure/failure.dart';
 import 'package:mdf/data/models/index.dart';
 import 'package:mdf/data/repos/user_repository_impl.dart';
-import 'package:mdf/presentation/components/checkbox_comp.dart';
+import 'package:mdf/presentation/profile_form/components/help_checkboxes.dart';
 
 class ProfileFormController extends GetxController {
   final UserRepository userRepository;
@@ -14,12 +14,12 @@ class ProfileFormController extends GetxController {
   TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController locationController = TextEditingController();
+  TextEditingController detailsController = TextEditingController();
 
-  final transportKey = GlobalKey<CheckBoxComponentState>();
-  final cazareKey = GlobalKey<CheckBoxComponentState>();
-  final coordonationOnlineKey = GlobalKey<CheckBoxComponentState>();
-  final coordonationOfflineKey = GlobalKey<CheckBoxComponentState>();
-  final servicesKey = GlobalKey<CheckBoxComponentState>();
+  final transportKey = GlobalKey<HelpCheckboxesState>();
+
+
+  var isFromRegister = false;
 
   List<Distrinct> district = [];
   Distrinct? _selectedDistrict = null;
@@ -43,11 +43,12 @@ class ProfileFormController extends GetxController {
     response.fold((l) => {if (l is ServerFailure) {}}, (r) => {district = r});
   }
 
+  void completeProfile() {
+
+  }
+
   void _validateForm() {
-    var hasValidService = transportKey.currentState?.isChecked == true ||
-        cazareKey.currentState?.isChecked == true ||
-        coordonationOnlineKey.currentState?.isChecked == true ||
-        coordonationOfflineKey.currentState?.isChecked == true;
+    var hasValidService = transportKey.currentState?.getCheckedServicesLabels().isNotEmpty == true;
 
     var isValid = firstNameController.text.isNotEmpty &&
         lastNameController.text.isNotEmpty &&

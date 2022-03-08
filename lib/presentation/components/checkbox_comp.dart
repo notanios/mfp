@@ -22,17 +22,15 @@ class CheckBoxComponentState extends State<CheckboxComponent> {
   Widget build(BuildContext context) {
     Color getColor(Set<MaterialState> states) {
       const Set<MaterialState> interactiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
+        MaterialState.selected,
       };
       if (states.any(interactiveStates.contains)) {
-        return AppColors.primaryColor;
+        return AppColors.primaryBlue;
+      } else {
+        return AppColors.black;
       }
-      return AppColors.primaryColor;
     }
 
-    print("Checkbox isChecked $isChecked");
     return Row(
       children: [
         SizedBox(
@@ -56,7 +54,7 @@ class CheckBoxComponentState extends State<CheckboxComponent> {
           padding: const EdgeInsets.only(left: 10.0),
           child: Text(
             widget.label,
-            style: TextStyles.regular.copyWith(fontSize: 13),
+            style: TextStyles.regular.copyWith(fontSize: 15, color: AppColors.black),
           ),
         )
       ],

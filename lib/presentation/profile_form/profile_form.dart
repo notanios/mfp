@@ -4,6 +4,7 @@ import 'package:mdf/presentation/components/checkbox_comp.dart';
 import 'package:mdf/presentation/components/checkbox_group.dart';
 import 'package:mdf/presentation/components/input_field.dart';
 import 'package:mdf/presentation/components/primary_button.dart';
+import 'package:mdf/presentation/profile_form/components/help_checkboxes.dart';
 import 'package:mdf/presentation/profile_form/profile_form_controller.dart';
 import 'package:mdf/presentation/styles/app_colors.dart';
 import 'package:mdf/presentation/styles/strings.dart';
@@ -17,9 +18,12 @@ class ProfileForm extends GetView<ProfileFormController> {
   final FocusNode _locationFocusNode = FocusNode();
 
   bool isFromRegister;
+
   ProfileForm(this.isFromRegister, {Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    controller.isFromRegister = isFromRegister;
     return scrollBody(context);
   }
 
@@ -29,32 +33,38 @@ class ProfileForm extends GetView<ProfileFormController> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.max,
       children: [
-        PrsntTextInput(
-          focusNode: _firstnameFocusNode,
-          controller: controller.firstNameController,
-          hint: Strings.nume,
-          textInputAction: TextInputAction.next,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        PrsntTextInput(
-          focusNode: _lastnameFocusNode,
-          controller: controller.lastNameController,
-          hint: Strings.prenume,
-          textInputAction: TextInputAction.next,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
+        isFromRegister
+            ? Container()
+            : PrsntTextInput(
+                focusNode: _firstnameFocusNode,
+                controller: controller.firstNameController,
+                hint: Strings.nume,
+                textInputAction: TextInputAction.next,
+              ),
+        isFromRegister
+            ? Container()
+            : const SizedBox(
+                height: 10,
+              ),
+        isFromRegister
+            ? Container()
+            : PrsntTextInput(
+                focusNode: _lastnameFocusNode,
+                controller: controller.lastNameController,
+                hint: Strings.prenume,
+                textInputAction: TextInputAction.next,
+              ),
+        isFromRegister
+            ? Container()
+            : const SizedBox(
+                height: 10,
+              ),
         PrsntTextInput(
           focusNode: _locationFocusNode,
           controller: controller.locationController,
           hint: Strings.localitate,
           readOnly: true,
           onTap: () {
-            Size screenSize = MediaQuery.of(context).size;
-
             showModalBottomSheet(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
@@ -65,21 +75,21 @@ class ProfileForm extends GetView<ProfileFormController> {
                     child: controller.district.isNotEmpty
                         ? Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.only(top: 20.0),
+                              padding: const EdgeInsets.only(top: 30.0),
                               child: ListView.builder(
                                 itemCount: controller.district.length,
                                 itemBuilder: (context, index) {
-                                  return Card(
-                                    child: ListTile(
-                                      title: Text(
+                                  return ListTile(
+                                    title: Center(
+                                      child: Text(
                                           controller.district[index].name ??
                                               ""),
-                                      onTap: () {
-                                        controller.setSelectedDistrict(
-                                            controller.district[index]);
-                                        Get.back();
-                                      },
                                     ),
+                                    onTap: () {
+                                      controller.setSelectedDistrict(
+                                          controller.district[index]);
+                                      Get.back();
+                                    },
                                   );
                                 },
                               ),
@@ -91,68 +101,63 @@ class ProfileForm extends GetView<ProfileFormController> {
           },
           textInputAction: TextInputAction.next,
         ),
-        const SizedBox(
-          height: 10,
-        ),
-        PrsntTextInput(
-          focusNode: _emailFocusNode,
-          controller: controller.emailController,
-          hint: Strings.email,
-          keyboardType: TextInputType.emailAddress,
-          textInputAction: TextInputAction.done,
-        ),
+        isFromRegister
+            ? Container()
+            : const SizedBox(
+                height: 10,
+              ),
+        isFromRegister
+            ? Container()
+            : PrsntTextInput(
+                focusNode: _emailFocusNode,
+                controller: controller.emailController,
+                hint: Strings.email,
+                keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.done,
+              ),
         const SizedBox(
           height: 20,
         ),
+        isFromRegister
+            ? Container()
+            : Text(
+                Strings.cu_ce_poti_ajuta,
+                style: TextStyles.regular
+                    .copyWith(color: AppColors.black, fontSize: 18),
+              ),
+        const SizedBox(
+          height: 10,
+        ),
+        HelpCheckboxes((){
+          controller.onCheckboxChanged();
+        }),
+        const SizedBox(
+          height: 10,
+        ),
+        const CheckboxGroup(),
+        const SizedBox(
+          height: 10,
+        ),
+        Container(
+          width: double.infinity,
+          height: 1,
+          color: AppColors.dividerColor,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         Text(
-          Strings.cu_ce_poti_ajuta,
+          Strings.details,
           style:
-              TextStyles.regular.copyWith(color: AppColors.black, fontSize: 18),
+              TextStyles.regular.copyWith(fontSize: 18, color: AppColors.black),
         ),
         const SizedBox(
-          height: 10,
+          height: 5,
         ),
-        CheckboxComponent(
-          key: controller.transportKey,
-          label: Strings.transport,
-          onChanged: (value) {
-            controller.onCheckboxChanged();
-          },
+        PrsntTextInput(
+          controller: controller.detailsController,
+          maxLines: 5,
         ),
-        const SizedBox(
-          height: 10,
-        ),
-        CheckboxComponent(
-          key: controller.cazareKey,
-          label: Strings.cazare,
-          onChanged: (value) {
-            controller.onCheckboxChanged();
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        CheckboxComponent(
-          key: controller.coordonationOnlineKey,
-          label: Strings.coordonare_online,
-          onChanged: (value) {
-            controller.onCheckboxChanged();
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        CheckboxComponent(
-          key: controller.coordonationOfflineKey,
-          label: Strings.coordonare_offline,
-          onChanged: (value) {
-            controller.onCheckboxChanged();
-          },
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        CheckboxGroup(),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 15),
           child: Obx(() => PrimaryButton(

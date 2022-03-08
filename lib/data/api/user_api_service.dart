@@ -23,8 +23,8 @@ abstract class UserApiService {
   @POST("/activate")
   Future<ActivationResponse> confirmCode(@Body() ActivationBody body);
 
-  @POST("/profile")
-  Future updateProfile();
+  @POST("/Profile")
+  Future<dynamic> updateProfile(@Body() CompleteProfileBody body);
 
   @POST("/logout")
   Future logout();

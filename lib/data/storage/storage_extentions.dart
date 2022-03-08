@@ -7,6 +7,9 @@ extension GetStorageExtentions on GetStorage {
   static const EMAIL_KEY = "email_number";
   static const SESSION_STATUS = "session_status";
   static const PASSWORD = "password";
+  static const DETAILS = "details";
+  static const SERVICES = "services";
+  static const LOCATIONS = "locations";
 
   void putFirstName(String value) async {
     await write(FIRST_NAME_KEY, value);
@@ -54,6 +57,30 @@ extension GetStorageExtentions on GetStorage {
 
   String getPassword() {
     return read(PASSWORD);
+  }
+
+  void putDetails(String details) async {
+    await write(DETAILS, details);
+  }
+
+  String getDetails() {
+    return read(DETAILS);
+  }
+
+  void putLocations(List<String> locations) {
+    write(LOCATIONS, locations);
+  }
+
+  List<String> getLocations() {
+    return read(LOCATIONS);
+  }
+
+  void putServices(List<String> services) {
+    write(SERVICES, services);
+  }
+
+  List<String> getServices() {
+    return read(SERVICES);
   }
 }
 

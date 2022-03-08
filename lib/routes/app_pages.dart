@@ -15,6 +15,7 @@ import '../presentation/base/snack_bar_widget.dart';
 import '../presentation/login/login_screen.dart';
 import '../presentation/notifications/notifications_binding.dart';
 import '../presentation/profile/profile_binding.dart';
+import '../presentation/register/register_binding.dart';
 
 part 'app_routes.dart';
 
@@ -37,8 +38,8 @@ class AppPages {
         bindings: [UserRepoBindings(), ProfileFormBinding(), ProfileBinding()]),
     GetPage(
         name: Routes.REGISTER,
-        page: () => RegisterScreen(),
-        bindings: [UserRepoBindings(), ProfileFormBinding()]),
+        page: () => CompleteProfileScreen(),
+        bindings: [UserRepoBindings(), CompleteProfileBinding()]),
     GetPage(
         name: Routes.NOTIFICATIONS,
         page: () => const NotificationsScreen(),

@@ -11,7 +11,7 @@ abstract class UserApiDataSource {
 
   Future<ActivationResponse> confirmCode(ActivationBody body);
 
-  Future<dynamic> updateProfile();
+  Future<dynamic> updateProfile(CompleteProfileBody body);
 
   Future<dynamic> logout();
 }
@@ -56,8 +56,8 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   }
 
   @override
-  Future updateProfile() {
-    return _userApiService.updateProfile();
+  Future<dynamic> updateProfile(CompleteProfileBody body) {
+    return _userApiService.updateProfile(body);
   }
 
   @override
