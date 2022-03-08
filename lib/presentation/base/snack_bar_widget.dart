@@ -17,16 +17,25 @@ class SnackBarWidget extends StatefulWidget {
 class SnackBarWidgetState extends State<SnackBarWidget> with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<Offset> position;
+  late Duration durationToClose;
 
   @override
   void initState() {
     super.initState();
+    if (widget.durationToClose != null) {
+      durationToClose = widget.durationToClose!;
+    } else {
+      durationToClose = const Duration(seconds: 5);
+    }
     controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
     position = Tween<Offset>(begin: const Offset(0.0, 4.0), end: Offset.zero)
         .animate(CurvedAnimation(parent: controller, curve: Curves.bounceIn));
 
     controller.forward();
 
+    Future.delayed(durationToClose, () {
+      _close();
+    });
   }
 
   //SafeArea if we want to show status bar
@@ -46,7 +55,7 @@ class SnackBarWidgetState extends State<SnackBarWidget> with SingleTickerProvide
             position: position,
             child: GestureDetector(
               onVerticalDragUpdate: (utils) {
-               // _close();
+                _close();
               },
               child: Material(
                 color: AppColors.santasGray,

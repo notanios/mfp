@@ -25,7 +25,7 @@ class Strings {
  static const String availability = "Disponibilitate";
  static const String solicitari = "Solicitări:";
  static const String register = "Înregistrează-te";
- static const String insert_number = "Introdu numărul tău de telefon pentru a te putea identifica în sistem";
+ static const String insert_number = "Introdu datele tale  pentru a te înregistra în sistem";
  static const String register_header = "Înregistrare";
  static const String continue_label = "Continuă";
  static const String save = "Salvează";
@@ -37,6 +37,7 @@ class Strings {
  static const String no_internet_connection = "Nu a fost detectată conexiune la internet, vă rugăm să încercați din nou.";
  static const String accept = "Acceaptă";
  static const String ignore = "Ignoră";
+ static const String verify = "Verifiсă";
+ static const String verifing = "Se verifiсă...";
 
-//static const String telefon = "Telefon";
 }

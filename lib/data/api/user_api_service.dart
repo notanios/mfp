@@ -11,8 +11,8 @@ abstract class UserApiService {
     return _UserApiService(client);
   }
 
-  @GET('/v1/passenger')
-  Future<UserResponseApiDto> login(@Query('phone_number')String phoneNumber);
+  @POST('/register')
+  Future<dynamic> login (@Body()RegisterBody body);
 
   @POST("/token")
   Future sendFirebaseToken(@Body() String token);
@@ -20,8 +20,8 @@ abstract class UserApiService {
   @GET("/notifications")
   Future<List<HelpNotification>> getNotifications();
 
-  @POST("/confirm-code")
-  Future confirmCode(@Body() String code);
+  @POST("/activate")
+  Future<ActivationResponse> confirmCode(@Body() ActivationBody body);
 
   @POST("/profile")
   Future updateProfile();

@@ -56,3 +56,47 @@ Map<String, dynamic> _$$_HelpNotificationToJson(_$_HelpNotification instance) =>
       'description': instance.descriptions,
       'status': instance.status,
     };
+
+_$_RegisterBody _$$_RegisterBodyFromJson(Map<String, dynamic> json) =>
+    _$_RegisterBody(
+      token: json['ApiToken'] as String?,
+      firstName: json['FirstName'] as String?,
+      lastName: json['LastName'] as String?,
+      phoneNumber: json['PhoneNumber'] as String?,
+      email: json['EmailAddress'] as String?,
+    );
+
+Map<String, dynamic> _$$_RegisterBodyToJson(_$_RegisterBody instance) =>
+    <String, dynamic>{
+      'ApiToken': instance.token,
+      'FirstName': instance.firstName,
+      'LastName': instance.lastName,
+      'PhoneNumber': instance.phoneNumber,
+      'EmailAddress': instance.email,
+    };
+
+_$_ActivationResponse _$$_ActivationResponseFromJson(
+        Map<String, dynamic> json) =>
+    _$_ActivationResponse(
+      password: json['password'] as String?,
+    );
+
+Map<String, dynamic> _$$_ActivationResponseToJson(
+        _$_ActivationResponse instance) =>
+    <String, dynamic>{
+      'password': instance.password,
+    };
+
+_$_ActivationBody _$$_ActivationBodyFromJson(Map<String, dynamic> json) =>
+    _$_ActivationBody(
+      token: json['ApiToken'] as String?,
+      phoneNumber: json['PhoneNumber'] as String?,
+      activationCode: json['ActivationCode'] as String?,
+    );
+
+Map<String, dynamic> _$$_ActivationBodyToJson(_$_ActivationBody instance) =>
+    <String, dynamic>{
+      'ApiToken': instance.token,
+      'PhoneNumber': instance.phoneNumber,
+      'ActivationCode': instance.activationCode,
+    };

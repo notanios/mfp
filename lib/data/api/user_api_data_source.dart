@@ -4,12 +4,12 @@ import 'package:mdf/data/api/user_api_service.dart';
 import '../models/index.dart';
 
 abstract class UserApiDataSource {
-  Future<UserResponseApiDto> login(String phoneNumber);
+  Future<dynamic> login(RegisterBody body);
 
   Future <dynamic> sendFirebaseToken(String token);
   Future <List<HelpNotification>> getNotifications();
 
-  Future<dynamic> confirmCode(String code);
+  Future<ActivationResponse> confirmCode(ActivationBody body);
 
   Future<dynamic> updateProfile();
 
@@ -23,8 +23,8 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   UserApiDataSourceImpl({required this.dioClient}) : _userApiService = UserApiService.create(dioClient);
 
   @override
-  Future<UserResponseApiDto> login(String phoneNumber) {
-    return _userApiService.login(phoneNumber);
+  Future<dynamic> login(RegisterBody body) {
+    return _userApiService.login(body);
   }
 
   @override
@@ -51,8 +51,8 @@ class UserApiDataSourceImpl implements UserApiDataSource {
   }
 
   @override
-  Future confirmCode(String code) {
-    return _userApiService.confirmCode(code);
+  Future<ActivationResponse> confirmCode(ActivationBody body) {
+    return _userApiService.confirmCode(body);
   }
 
   @override

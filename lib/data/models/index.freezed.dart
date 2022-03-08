@@ -728,3 +728,630 @@ abstract class _HelpNotification implements HelpNotification {
   _$HelpNotificationCopyWith<_HelpNotification> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+RegisterBody _$RegisterBodyFromJson(Map<String, dynamic> json) {
+  return _RegisterBody.fromJson(json);
+}
+
+/// @nodoc
+class _$RegisterBodyTearOff {
+  const _$RegisterBodyTearOff();
+
+  _RegisterBody call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'FirstName') String? firstName,
+      @JsonKey(name: 'LastName') String? lastName,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'EmailAddress') String? email}) {
+    return _RegisterBody(
+      token: token,
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber,
+      email: email,
+    );
+  }
+
+  RegisterBody fromJson(Map<String, Object?> json) {
+    return RegisterBody.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $RegisterBody = _$RegisterBodyTearOff();
+
+/// @nodoc
+mixin _$RegisterBody {
+  @JsonKey(name: 'ApiToken')
+  String? get token => throw _privateConstructorUsedError;
+  @JsonKey(name: 'FirstName')
+  String? get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'LastName')
+  String? get lastName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'EmailAddress')
+  String? get email => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $RegisterBodyCopyWith<RegisterBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $RegisterBodyCopyWith<$Res> {
+  factory $RegisterBodyCopyWith(
+          RegisterBody value, $Res Function(RegisterBody) then) =
+      _$RegisterBodyCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'FirstName') String? firstName,
+      @JsonKey(name: 'LastName') String? lastName,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'EmailAddress') String? email});
+}
+
+/// @nodoc
+class _$RegisterBodyCopyWithImpl<$Res> implements $RegisterBodyCopyWith<$Res> {
+  _$RegisterBodyCopyWithImpl(this._value, this._then);
+
+  final RegisterBody _value;
+  // ignore: unused_field
+  final $Res Function(RegisterBody) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? phoneNumber = freezed,
+    Object? email = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$RegisterBodyCopyWith<$Res>
+    implements $RegisterBodyCopyWith<$Res> {
+  factory _$RegisterBodyCopyWith(
+          _RegisterBody value, $Res Function(_RegisterBody) then) =
+      __$RegisterBodyCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'FirstName') String? firstName,
+      @JsonKey(name: 'LastName') String? lastName,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'EmailAddress') String? email});
+}
+
+/// @nodoc
+class __$RegisterBodyCopyWithImpl<$Res> extends _$RegisterBodyCopyWithImpl<$Res>
+    implements _$RegisterBodyCopyWith<$Res> {
+  __$RegisterBodyCopyWithImpl(
+      _RegisterBody _value, $Res Function(_RegisterBody) _then)
+      : super(_value, (v) => _then(v as _RegisterBody));
+
+  @override
+  _RegisterBody get _value => super._value as _RegisterBody;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? firstName = freezed,
+    Object? lastName = freezed,
+    Object? phoneNumber = freezed,
+    Object? email = freezed,
+  }) {
+    return _then(_RegisterBody(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      firstName: firstName == freezed
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_RegisterBody implements _RegisterBody {
+  _$_RegisterBody(
+      {@JsonKey(name: 'ApiToken') this.token,
+      @JsonKey(name: 'FirstName') this.firstName,
+      @JsonKey(name: 'LastName') this.lastName,
+      @JsonKey(name: 'PhoneNumber') this.phoneNumber,
+      @JsonKey(name: 'EmailAddress') this.email});
+
+  factory _$_RegisterBody.fromJson(Map<String, dynamic> json) =>
+      _$$_RegisterBodyFromJson(json);
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  final String? token;
+  @override
+  @JsonKey(name: 'FirstName')
+  final String? firstName;
+  @override
+  @JsonKey(name: 'LastName')
+  final String? lastName;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  final String? phoneNumber;
+  @override
+  @JsonKey(name: 'EmailAddress')
+  final String? email;
+
+  @override
+  String toString() {
+    return 'RegisterBody(token: $token, firstName: $firstName, lastName: $lastName, phoneNumber: $phoneNumber, email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RegisterBody &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$RegisterBodyCopyWith<_RegisterBody> get copyWith =>
+      __$RegisterBodyCopyWithImpl<_RegisterBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_RegisterBodyToJson(this);
+  }
+}
+
+abstract class _RegisterBody implements RegisterBody {
+  factory _RegisterBody(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'FirstName') String? firstName,
+      @JsonKey(name: 'LastName') String? lastName,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'EmailAddress') String? email}) = _$_RegisterBody;
+
+  factory _RegisterBody.fromJson(Map<String, dynamic> json) =
+      _$_RegisterBody.fromJson;
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  String? get token;
+  @override
+  @JsonKey(name: 'FirstName')
+  String? get firstName;
+  @override
+  @JsonKey(name: 'LastName')
+  String? get lastName;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber;
+  @override
+  @JsonKey(name: 'EmailAddress')
+  String? get email;
+  @override
+  @JsonKey(ignore: true)
+  _$RegisterBodyCopyWith<_RegisterBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ActivationResponse _$ActivationResponseFromJson(Map<String, dynamic> json) {
+  return _ActivationResponse.fromJson(json);
+}
+
+/// @nodoc
+class _$ActivationResponseTearOff {
+  const _$ActivationResponseTearOff();
+
+  _ActivationResponse call({@JsonKey(name: 'password') String? password}) {
+    return _ActivationResponse(
+      password: password,
+    );
+  }
+
+  ActivationResponse fromJson(Map<String, Object?> json) {
+    return ActivationResponse.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ActivationResponse = _$ActivationResponseTearOff();
+
+/// @nodoc
+mixin _$ActivationResponse {
+  @JsonKey(name: 'password')
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActivationResponseCopyWith<ActivationResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActivationResponseCopyWith<$Res> {
+  factory $ActivationResponseCopyWith(
+          ActivationResponse value, $Res Function(ActivationResponse) then) =
+      _$ActivationResponseCopyWithImpl<$Res>;
+  $Res call({@JsonKey(name: 'password') String? password});
+}
+
+/// @nodoc
+class _$ActivationResponseCopyWithImpl<$Res>
+    implements $ActivationResponseCopyWith<$Res> {
+  _$ActivationResponseCopyWithImpl(this._value, this._then);
+
+  final ActivationResponse _value;
+  // ignore: unused_field
+  final $Res Function(ActivationResponse) _then;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ActivationResponseCopyWith<$Res>
+    implements $ActivationResponseCopyWith<$Res> {
+  factory _$ActivationResponseCopyWith(
+          _ActivationResponse value, $Res Function(_ActivationResponse) then) =
+      __$ActivationResponseCopyWithImpl<$Res>;
+  @override
+  $Res call({@JsonKey(name: 'password') String? password});
+}
+
+/// @nodoc
+class __$ActivationResponseCopyWithImpl<$Res>
+    extends _$ActivationResponseCopyWithImpl<$Res>
+    implements _$ActivationResponseCopyWith<$Res> {
+  __$ActivationResponseCopyWithImpl(
+      _ActivationResponse _value, $Res Function(_ActivationResponse) _then)
+      : super(_value, (v) => _then(v as _ActivationResponse));
+
+  @override
+  _ActivationResponse get _value => super._value as _ActivationResponse;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+  }) {
+    return _then(_ActivationResponse(
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ActivationResponse implements _ActivationResponse {
+  _$_ActivationResponse({@JsonKey(name: 'password') this.password});
+
+  factory _$_ActivationResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_ActivationResponseFromJson(json);
+
+  @override
+  @JsonKey(name: 'password')
+  final String? password;
+
+  @override
+  String toString() {
+    return 'ActivationResponse(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ActivationResponse &&
+            const DeepCollectionEquality().equals(other.password, password));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ActivationResponseCopyWith<_ActivationResponse> get copyWith =>
+      __$ActivationResponseCopyWithImpl<_ActivationResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ActivationResponseToJson(this);
+  }
+}
+
+abstract class _ActivationResponse implements ActivationResponse {
+  factory _ActivationResponse({@JsonKey(name: 'password') String? password}) =
+      _$_ActivationResponse;
+
+  factory _ActivationResponse.fromJson(Map<String, dynamic> json) =
+      _$_ActivationResponse.fromJson;
+
+  @override
+  @JsonKey(name: 'password')
+  String? get password;
+  @override
+  @JsonKey(ignore: true)
+  _$ActivationResponseCopyWith<_ActivationResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ActivationBody _$ActivationBodyFromJson(Map<String, dynamic> json) {
+  return _ActivationBody.fromJson(json);
+}
+
+/// @nodoc
+class _$ActivationBodyTearOff {
+  const _$ActivationBodyTearOff();
+
+  _ActivationBody call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'ActivationCode') String? activationCode}) {
+    return _ActivationBody(
+      token: token,
+      phoneNumber: phoneNumber,
+      activationCode: activationCode,
+    );
+  }
+
+  ActivationBody fromJson(Map<String, Object?> json) {
+    return ActivationBody.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $ActivationBody = _$ActivationBodyTearOff();
+
+/// @nodoc
+mixin _$ActivationBody {
+  @JsonKey(name: 'ApiToken')
+  String? get token => throw _privateConstructorUsedError;
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ActivationCode')
+  String? get activationCode => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActivationBodyCopyWith<ActivationBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActivationBodyCopyWith<$Res> {
+  factory $ActivationBodyCopyWith(
+          ActivationBody value, $Res Function(ActivationBody) then) =
+      _$ActivationBodyCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'ActivationCode') String? activationCode});
+}
+
+/// @nodoc
+class _$ActivationBodyCopyWithImpl<$Res>
+    implements $ActivationBodyCopyWith<$Res> {
+  _$ActivationBodyCopyWithImpl(this._value, this._then);
+
+  final ActivationBody _value;
+  // ignore: unused_field
+  final $Res Function(ActivationBody) _then;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? activationCode = freezed,
+  }) {
+    return _then(_value.copyWith(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      activationCode: activationCode == freezed
+          ? _value.activationCode
+          : activationCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ActivationBodyCopyWith<$Res>
+    implements $ActivationBodyCopyWith<$Res> {
+  factory _$ActivationBodyCopyWith(
+          _ActivationBody value, $Res Function(_ActivationBody) then) =
+      __$ActivationBodyCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'ApiToken') String? token,
+      @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+      @JsonKey(name: 'ActivationCode') String? activationCode});
+}
+
+/// @nodoc
+class __$ActivationBodyCopyWithImpl<$Res>
+    extends _$ActivationBodyCopyWithImpl<$Res>
+    implements _$ActivationBodyCopyWith<$Res> {
+  __$ActivationBodyCopyWithImpl(
+      _ActivationBody _value, $Res Function(_ActivationBody) _then)
+      : super(_value, (v) => _then(v as _ActivationBody));
+
+  @override
+  _ActivationBody get _value => super._value as _ActivationBody;
+
+  @override
+  $Res call({
+    Object? token = freezed,
+    Object? phoneNumber = freezed,
+    Object? activationCode = freezed,
+  }) {
+    return _then(_ActivationBody(
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      activationCode: activationCode == freezed
+          ? _value.activationCode
+          : activationCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ActivationBody implements _ActivationBody {
+  _$_ActivationBody(
+      {@JsonKey(name: 'ApiToken') this.token,
+      @JsonKey(name: 'PhoneNumber') this.phoneNumber,
+      @JsonKey(name: 'ActivationCode') this.activationCode});
+
+  factory _$_ActivationBody.fromJson(Map<String, dynamic> json) =>
+      _$$_ActivationBodyFromJson(json);
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  final String? token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  final String? phoneNumber;
+  @override
+  @JsonKey(name: 'ActivationCode')
+  final String? activationCode;
+
+  @override
+  String toString() {
+    return 'ActivationBody(token: $token, phoneNumber: $phoneNumber, activationCode: $activationCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ActivationBody &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.activationCode, activationCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(activationCode));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ActivationBodyCopyWith<_ActivationBody> get copyWith =>
+      __$ActivationBodyCopyWithImpl<_ActivationBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ActivationBodyToJson(this);
+  }
+}
+
+abstract class _ActivationBody implements ActivationBody {
+  factory _ActivationBody(
+          {@JsonKey(name: 'ApiToken') String? token,
+          @JsonKey(name: 'PhoneNumber') String? phoneNumber,
+          @JsonKey(name: 'ActivationCode') String? activationCode}) =
+      _$_ActivationBody;
+
+  factory _ActivationBody.fromJson(Map<String, dynamic> json) =
+      _$_ActivationBody.fromJson;
+
+  @override
+  @JsonKey(name: 'ApiToken')
+  String? get token;
+  @override
+  @JsonKey(name: 'PhoneNumber')
+  String? get phoneNumber;
+  @override
+  @JsonKey(name: 'ActivationCode')
+  String? get activationCode;
+  @override
+  @JsonKey(ignore: true)
+  _$ActivationBodyCopyWith<_ActivationBody> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -31,3 +31,8 @@ class _BasePageState extends State<BasePage> {
     ));
   }
 }
+
+void hideKeyboard(BuildContext context) {
+  FocusScope.of(context).requestFocus(FocusNode());
+}
+

@@ -16,7 +16,7 @@ class ErrorInterceptor extends Interceptor {
       case DioErrorType.response:
         switch (err.response?.statusCode) {
           case 400:
-            throw BadRequestException(err.requestOptions);
+            throw BadRequestException(err.requestOptions, err.response);
           case 401:
             throw UnauthorizedException(err.requestOptions);
           case 404:
@@ -38,11 +38,12 @@ class ErrorInterceptor extends Interceptor {
 }
 
 class BadRequestException extends DioError {
-  BadRequestException(RequestOptions r) : super(requestOptions: r);
+  Response? response;
+  BadRequestException(RequestOptions r, this.response) : super(requestOptions: r);
 
   @override
   String toString() {
-    return Strings.general_error;
+    return  response?.data?.toString() ?? Strings.general_error;
   }
 }
 

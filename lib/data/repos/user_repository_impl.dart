@@ -1,23 +1,23 @@
-import 'dart:ffi';
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:mdf/data/api/distrincts_data_source.dart';
-import 'package:mdf/data/api/errors/error_interceptor.dart';
+import 'package:mdf/data/constants/env_constants.dart';
 import 'package:mdf/data/models/index.dart';
 
+import '../api/distrincts_data_source.dart';
 import '../api/user_api_data_source.dart';
 import '../models/failure/failure.dart';
 
 abstract class UserRepository {
-  Future<Either<Failure, UserApiDto>> login(phoneNumber);
+  Future<Either<Failure, dynamic>> login(
+      String firstName, String lastName, String email, String phoneNumber);
+
   Future<Either<Failure, List<Distrinct>>> getDistricts();
 
   Future<Either<Failure, dynamic>> sendFirebaseToken(String token);
+
   Future<Either<Failure, List<HelpNotification>>> getNotifications();
 
-  Future<Either<Failure, dynamic>> confirmCode(String code);
+  Future<Either<Failure, ActivationResponse>> confirmCode(String code, String phoneNumber);
 
   Future<Either<Failure, dynamic>> updateProfile();
 
@@ -28,77 +28,84 @@ class UserRepositoryImpl extends UserRepository {
   final UserApiDataSource userApiDataSource;
   final DistrictsDataSource districtsDataSource;
 
-  UserRepositoryImpl({required this.userApiDataSource, required this.districtsDataSource});
+  UserRepositoryImpl(
+      {required this.userApiDataSource, required this.districtsDataSource});
 
   @override
-  Future<Either<Failure, UserApiDto>> login(phoneNumber) async {
+  Future<Either<Failure, dynamic>> login(String firstName, String lastName,
+      String email, String phoneNumber) async {
     try {
-      final users = await userApiDataSource.login(phoneNumber);
-      return Right(users.data.first);
+      RegisterBody body = RegisterBody(
+          firstName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: phoneNumber,
+          token: EnvConstants.token);
+
+      final response = await userApiDataSource.login(body);
+      return Right(response);
     } catch (e) {
-      if (e is DioError) {
-        return Left(ServerFailure(errorObject: e.response?.data));
-      }
       return Left(ServerFailure(errorObject: e));
     }
   }
 
   @override
   Future<Either<Failure, List<Distrinct>>> getDistricts() async {
-     try {
-       final districts = await districtsDataSource.getDistricts();
-       return Right(districts);
-     }catch (e){
-       return Left(ServerFailure(errorObject: e));
-     }
+    try {
+      final districts = await districtsDataSource.getDistricts();
+      return Right(districts);
+    } catch (e) {
+      return Left(ServerFailure(errorObject: e));
+    }
   }
 
   @override
   Future<Either<Failure, dynamic>> sendFirebaseToken(String token) async {
-      try {
-        final response = await userApiDataSource.sendFirebaseToken(token);
-        return Right(response);
-      }catch (e){
-        return Left(ServerFailure(errorObject: e));
-      }
+    try {
+      final response = await userApiDataSource.sendFirebaseToken(token);
+      return Right(response);
+    } catch (e) {
+      return Left(ServerFailure(errorObject: e));
+    }
   }
 
   @override
   Future<Either<Failure, List<HelpNotification>>> getNotifications() async {
-     try{
-       final response = await userApiDataSource.getNotifications();
-       return Right(response);
-     } catch (e) {
-       return Left(ServerFailure(errorObject: e));
-     }
+    try {
+      final response = await userApiDataSource.getNotifications();
+      return Right(response);
+    } catch (e) {
+      return Left(ServerFailure(errorObject: e));
+    }
   }
 
   @override
-  Future<Either<Failure, dynamic>> confirmCode(String code) async {
+  Future<Either<Failure, ActivationResponse>> confirmCode(String code, String phoneNumber) async {
     try {
-      final response = await userApiDataSource.confirmCode(code);
+      var body = ActivationBody(token: EnvConstants.token, activationCode: code, phoneNumber: phoneNumber);
+      final response = await userApiDataSource.confirmCode(body);
       return Right(response);
-    } catch (e){
+    } catch (e) {
       return Left(ServerFailure(errorObject: e));
     }
   }
 
   @override
   Future<Either<Failure, dynamic>> updateProfile() async {
-    try{
+    try {
       var result = await userApiDataSource.updateProfile();
       return Right(result);
-    }catch(e){
+    } catch (e) {
       return Left(ServerFailure(errorObject: e));
     }
   }
 
   @override
   Future<Either<Failure, dynamic>> logout() async {
-    try{
+    try {
       var result = await userApiDataSource.logout();
       return Right(result);
-    }catch(e){
+    } catch (e) {
       return Left(ServerFailure(errorObject: e));
     }
   }
