@@ -96,13 +96,21 @@ extension GetStorageExtentions on GetStorage {
     return read(IS_AVAILABLE);
   }
 
-  void putTickets(Map<String, Ticket> tickets){
+  void putTickets(List<Ticket> tickets){
     write(TICKETS, tickets);
   }
 
-  Map<String, Ticket>? getTickets(){
-    print("storage getTickets ${read(TICKETS)}");
-    return read(TICKETS);
+  List<Ticket> getTickets(){
+    return read(TICKETS) ?? [Ticket(
+        giverPublicCodeID: "333333",
+        contactPerson: "Pavle",
+        contactPhoneNumber: "+37360229423",
+        animals: 0,
+        females: 1,
+        children: 2,
+        males: 3,
+        askingText: "sdadsadsa",
+        haveTransport: true)];
   }
 }
 

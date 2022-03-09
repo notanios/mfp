@@ -41,5 +41,12 @@ class Strings {
  static const String verifing = "Se verifiсă...";
  static const String complete_profile = "Completează profilul";
  static const String details = "Detalii:";
+ static const String males = "Bărbați: ";
+ static const String females = "Femei: ";
+ static const String children = "Copii: ";
+ static const String animale = "Animale: ";
+ static const String have_transport = "Necesită transport: ";
+ static const String yes = "Da";
+ static const String no = "Nu";
 
 }

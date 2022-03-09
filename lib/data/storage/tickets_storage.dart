@@ -9,22 +9,19 @@ class TicketsStorage {
   GetStorage box = GetStorage();
 
   void addTicket(Ticket ticket) {
-    print("addTicket");
-    var savedTicket = box.getTickets() ?? HashMap();
-    var id = ticket.giverPublicCodeID;
-    if(id != null){
-      savedTicket.putIfAbsent(id, () => ticket);
-      box.putTickets(savedTicket);
-    }
-  }
-
-  void removeTicket(String id) {
-    var savedTicket = box.getTickets() as HashMap<String, Ticket>;
-    savedTicket.remove(id);
+    var savedTicket = box.getTickets();
+    savedTicket.removeWhere((element) => element.giverPublicCodeID == ticket.giverPublicCodeID);
+    savedTicket.add(ticket);
     box.putTickets(savedTicket);
   }
 
-  Map<String, Ticket>? getTickets() {
+  void removeTicket(String id) {
+    var savedTicket = box.getTickets();
+    savedTicket.removeWhere((element) => element.giverPublicCodeID == id);
+    box.putTickets(savedTicket);
+  }
+
+  List<Ticket> getTickets() {
     return box.getTickets();
   }
 }

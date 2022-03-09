@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:mdf/data/models/failure/failure.dart';
 import 'package:mdf/data/models/index.dart';
 import 'package:mdf/data/storage/storage_extentions.dart';
 import 'package:mdf/data/storage/tickets_storage.dart';
@@ -30,11 +29,11 @@ class NotificationsController extends GetxController with StateMixin<String> {
     _initPushNotifications();
     //getNotifications(false);
     print("onInit tickets: ${ticketsStorage.getTickets()}");
-    notifications.value = (ticketsStorage.getTickets())?.values.toList() ?? [];
+    notifications.value = ticketsStorage.getTickets();
 
     isAvailableStatus.value = box.getIsAvailable();
     ticketsStorage.box.listen(() {
-        notifications.value = (ticketsStorage.getTickets()?.values.toList() ?? []);
+      notifications.value = ticketsStorage.getTickets();
     });
   }
 
@@ -42,7 +41,7 @@ class NotificationsController extends GetxController with StateMixin<String> {
     PushNotificationsController().init();
   }
 
-  /*void getNotifications(bool showLoading) async {
+/*void getNotifications(bool showLoading) async {
     isLoading.value = showLoading;
     var response = await userRepository.getNotifications();
     response.fold((l) {
